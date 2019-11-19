@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.List;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
@@ -46,6 +49,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
         expandedListTextView.setText(expandedListText);
+        expandedListTextView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition)));
         return convertView;
     }
 
@@ -83,6 +87,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.listTitle);
         listTitleTextView.setTypeface(null, Typeface.BOLD);
         listTitleTextView.setText(listTitle);
+        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
         return convertView;
     }
 
@@ -94,5 +99,11 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
         return true;
+    }
+
+    public int getFoodGroupColor(String group) {
+        int b = context.getResources().getIdentifier(group, "color", context.getPackageName());
+        int a = ContextCompat.getColor(context, b);
+        return a;
     }
 }
