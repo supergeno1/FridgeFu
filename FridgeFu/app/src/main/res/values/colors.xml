@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#C0E9EA</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="dairy">#AAAABB</color>
+    <color name="vegetables">#32A051</color>
+    <color name="fruits">#E08132</color>
+    <color name="meats">#700000</color>
+    <color name="dairy_child">#DDDDEE</color>
+    <color name="vegetables_child">#65D384</color>
+    <color name="fruits_child">#F3B465</color>
+    <color name="meats_child">#B00000</color>
 </resources>
