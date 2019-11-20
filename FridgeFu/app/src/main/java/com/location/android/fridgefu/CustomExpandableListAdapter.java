@@ -49,7 +49,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
         expandedListTextView.setText(expandedListText);
-        expandedListTextView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition)));
+        expandedListTextView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
         return convertView;
     }
 
