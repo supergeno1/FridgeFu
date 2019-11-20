@@ -20,6 +20,7 @@
         <activity android:name=".FridgeLanding" />
         <activity android:name=".SettingsLanding" />
         <activity android:name=".RecipeLanding" />
+
     </application>
 
 </manifest>
