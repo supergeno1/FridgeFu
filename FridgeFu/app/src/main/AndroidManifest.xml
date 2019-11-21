@@ -16,10 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GroceryLanding" />
-        <activity android:name=".FridgeLanding" />
-        <activity android:name=".SettingsLanding" />
-        <activity android:name=".RecipeLanding" />
+        <activity android:name=".RecipeBook" />
     </application>
 
 </manifest>
