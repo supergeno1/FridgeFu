@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FridgeFu</string>
+    <string name="lasagna_text"><font size="20">Lasagna</font>\n\<font size="10">10-15 minute cook time\n\2000 calories\n\8 servings</font></string>
+    <string name="pbj_text"><font size="20">PBJ</font>\n\<font size="10">2-5 minute cook time\n\200 calories\n\1 servings</font></string>
+    <string name="pbj2_text"><font size="20">PBJ2</font>\n\<font size="10">3 hour cook time\n\2000 calories\n\1 servings</font></string>
+    <string name="grilled_cheese_text"><font size="20">Grilled Cheese Sandwich</font>\n\<font size="10">10-15 minute cook time\n\200 calories\n\1 servings</font></string>
 </resources>
