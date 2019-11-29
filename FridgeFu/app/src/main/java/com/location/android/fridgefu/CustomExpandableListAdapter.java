@@ -1,5 +1,6 @@
 package com.location.android.fridgefu;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import android.content.Context;
@@ -17,10 +18,10 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> expandableListTitle;
-    private HashMap<String, List<String>> expandableListDetail;
+    private HashMap<String, List<FridgeItem>> expandableListDetail;
 
     public CustomExpandableListAdapter(Context context, List<String> expandableListTitle,
-                                       HashMap<String, List<String>> expandableListDetail) {
+                                       HashMap<String, List<FridgeItem>> expandableListDetail) {
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;
@@ -40,7 +41,11 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int listPosition, final int expandedListPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        final String expandedListText = (String) getChild(listPosition, expandedListPosition);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        final FridgeItem expandedListObject = (FridgeItem) getChild(listPosition, expandedListPosition);
+        final String expandedListText = expandedListObject.ingredient;
+        final String expandedListExpiration = sdf.format(expandedListObject.expiration_date.getTime());
+
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -49,7 +54,12 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
         expandedListTextView.setText(expandedListText);
-        expandedListTextView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
+
+        TextView expandedListDateView = (TextView) convertView
+                .findViewById(R.id.expandedListItemExpiration);
+        expandedListDateView.setText(expandedListExpiration);
+
+        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
         return convertView;
     }
 

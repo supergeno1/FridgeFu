@@ -34,6 +34,7 @@
         </LinearLayout>
         <ExpandableListView
             android:id="@+id/expandableListView"
+            android:layout_marginRight="-140dp"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"         android:divider="@android:color/darker_gray"
