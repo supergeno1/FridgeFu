@@ -5,29 +5,29 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ExpandableListDataPump {
-    public static HashMap<String, List<String>> getData() {
-        HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
+    public static HashMap<String, List<FridgeItem>> getData() {
+        HashMap<String, List<FridgeItem>> expandableListDetail = new HashMap<String, List<FridgeItem>>();
 
-        List<String> dairy = new ArrayList<String>();
-        dairy.add("Milk");
-        dairy.add("Cheese");
-        dairy.add("Ice Cream");
-        dairy.add("Yogurt");
-        dairy.add("Sour Cream");
+        List<FridgeItem> dairy = new ArrayList<FridgeItem>();
+        dairy.add(new FridgeItem("Milk", 2019, 12, 11));
+        dairy.add(new FridgeItem("Cheese", 2019, 12, 6));
+        dairy.add(new FridgeItem("Ice Cream", 2019, 12, 4));
+        dairy.add(new FridgeItem("Yogurt", 2019, 12, 10));
+        dairy.add(new FridgeItem("Sour Cream", 2019, 12, 1));
 
-        List<String> vegetables = new ArrayList<String>();
-        vegetables.add("Broccoli");
-        vegetables.add("Bell Peppers");
-        vegetables.add("Onions");
-        vegetables.add("Celery");
-        vegetables.add("Carrots");
+        List<FridgeItem> vegetables = new ArrayList<FridgeItem>();
+        vegetables.add(new FridgeItem("Broccoli", 2019, 12, 20));
+        vegetables.add(new FridgeItem("Bell Peppers", 2019, 12, 25));
+        vegetables.add(new FridgeItem("Onions", 2019, 12, 24));
+        vegetables.add(new FridgeItem("Celery", 2019, 12, 22));
+        vegetables.add(new FridgeItem("Carrot", 2019, 12, 29));
 
-        List<String> fruits = new ArrayList<String>();
-        fruits.add("Apple");
-        fruits.add("Banana");
-        fruits.add("Oranges");
-        fruits.add("Blueberries");
-        fruits.add("Mango");
+        List<FridgeItem> fruits = new ArrayList<FridgeItem>();
+        fruits.add(new FridgeItem("Apple", 2019, 12, 13));
+        fruits.add(new FridgeItem("Banana", 2019, 12, 7));
+        fruits.add(new FridgeItem("Oranges", 2019, 12, 1));
+        fruits.add(new FridgeItem("Blueberries", 2019, 12, 16));
+        fruits.add(new FridgeItem("Mango", 2019, 12, 31));
 
         expandableListDetail.put("dairy", dairy);
         expandableListDetail.put("vegetables", vegetables);
