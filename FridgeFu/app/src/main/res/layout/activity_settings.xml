@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height = "match_parent"
+    android:layout_width = "match_parent">
 
     <Button
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="@string/clear_list">
-
+        android:text="@string/clear_list"
+        android:id="@+id/list"
+        android:layout_centerHorizontal="true">
     </Button>
 
     <Button
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
         android:layout_marginTop="45dp"
-        android:text="@string/clear_fridge">
-
+        android:text="@string/clear_fridge"
+        android:id="@+id/fridge"
+        android:layout_below="@id/list"
+        android:layout_centerHorizontal="true">
     </Button>
 
     <Button
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
         android:layout_marginTop="45dp"
-        android:text="@string/add_ingredients">
-
+        android:text="@string/add_ingredients"
+        android:id="@+id/add"
+        android:layout_below="@id/fridge"
+        android:layout_centerHorizontal="true">
     </Button>
 
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
         android:layout_marginTop="45dp"
-        android:text="@string/help">
-
+        android:text="@string/help"
+        android:id="@+id/help"
+        android:layout_below="@id/add"
+        android:layout_centerHorizontal="true">
     </Button>
 
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
         android:layout_marginTop="45dp"
-        android:text="@string/about">
-
+        android:text="@string/about"
+        android:id="@+id/about"
+        android:layout_below="@id/help"
+        android:layout_centerHorizontal="true">
     </Button>
 
     <LinearLayout
@@ -62,29 +65,33 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="@drawable/grocery_list">
-
+            android:background="@drawable/grocery_list"
+            android:id="@+id/grocery_list">
         </ImageButton>
+
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/fridge">
-
+            android:background="@drawable/fridge"
+            android:id="@+id/fridge_menu">
         </ImageButton>
+
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/recipe_book">
-
+            android:background="@drawable/recipe_book"
+            android:id="@+id/recipe_book">
         </ImageButton>
+
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/settings">
+            android:background="@drawable/settings"
+            android:id="@+id/settings">
         </ImageButton>
+
     </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
