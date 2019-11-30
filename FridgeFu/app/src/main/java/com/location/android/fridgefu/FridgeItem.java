@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 public class FridgeItem {
     public String ingredient;
     public Calendar expiration_date;
+    public boolean show_settings = false;
     public FridgeItem (String ingredient, int year, int month, int day) {
         expiration_date = new GregorianCalendar();
         expiration_date.set(Calendar.YEAR, year);
