@@ -717,7 +717,9 @@ id end
 id expand_activities_button
 id expandableListView
 id expandedListItem
+id expandedListItemCheckMark
 id expandedListItemDelete
+id expandedListItemExclamationMark
 id expandedListItemExpiration
 id expandedListItemSettings
 id expanded_menu
@@ -725,6 +727,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id forever
+id fridgeInnerLinearLayout
 id gone
 id group_divider
 id groups
@@ -855,6 +858,7 @@ layout activity_recipe_book
 layout activity_recipe_filter
 layout activity_settings
 layout dropdown_serving
+layout grocery_item
 layout list_group
 layout list_item
 layout notification_action

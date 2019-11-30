@@ -1,4 +1,4 @@
-#Thu Nov 28 18:55:51 CST 2019
+#Fri Nov 29 21:11:42 CST 2019
 base.0=/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
