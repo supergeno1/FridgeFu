@@ -82,7 +82,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.expandedListItemExpiration);
         expandedListDateView.setText(expandedListExpiration);
 
-        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
+//        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
 
 
         Button deleteButton = convertView.findViewById(R.id.expandedListItemDelete);
@@ -133,7 +133,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.listTitle);
         listTitleTextView.setTypeface(null, Typeface.BOLD);
         listTitleTextView.setText(listTitle);
-        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
+//        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
         return convertView;
     }
 
