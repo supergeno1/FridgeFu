@@ -2,10 +2,14 @@ package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,7 +21,7 @@ public class FridgeLanding extends AppCompatActivity {
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;
+    HashMap<String, List<FridgeItem>> expandableListDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,7 @@ public class FridgeLanding extends AppCompatActivity {
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         expandableListDetail = ExpandableListDataPump.getData();
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
-        expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
+        expandableListAdapter = (ExpandableListAdapter) new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
@@ -53,6 +57,34 @@ public class FridgeLanding extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
+                View vxl = v.findViewById(R.id.fridgeInnerLinearLayout);
+                LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) vxl.getLayoutParams();
+
+                expandableListDetail.get(
+                        expandableListTitle.get(groupPosition)).get(
+                        childPosition).show_settings = !expandableListDetail.get(
+                        expandableListTitle.get(groupPosition)).get(
+                        childPosition).show_settings;
+
+                float dip = 140f;
+
+                if (!expandableListDetail.get(
+                        expandableListTitle.get(groupPosition)).get(
+                        childPosition).show_settings) {
+
+                    dip = 0f;
+                }
+
+                Resources r = getResources();
+                float px = TypedValue.applyDimension(
+                        TypedValue.COMPLEX_UNIT_DIP,
+                        dip,
+                        r.getDisplayMetrics()
+                );
+                p.setMargins(p.leftMargin, p.topMargin, (int)(px), p.bottomMargin);
+                vxl.setLayoutParams(p);
+
+
                 Toast.makeText(
                         getApplicationContext(),
                         expandableListTitle.get(groupPosition)

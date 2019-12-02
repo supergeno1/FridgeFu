@@ -26,11 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.location.android.fridgefu.IndividualRecipe" />
-        <activity android:name="com.location.android.fridgefu.RecipeLanding" />
-        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
-        <activity android:name="com.location.android.fridgefu.FridgeLanding" />
+        <activity android:name="com.location.android.fridgefu.RecipeBook" />
         <activity android:name="com.location.android.fridgefu.GroceryLanding" />
+        <activity android:name="com.location.android.fridgefu.FridgeLanding" />
+        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
+        <activity android:name="com.location.android.fridgefu.RecipeLanding" />
     </application>
 
 </manifest>
