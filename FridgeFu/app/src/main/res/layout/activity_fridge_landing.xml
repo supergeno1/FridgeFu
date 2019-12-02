@@ -1,83 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FridgeLanding">
-  
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/bot_nav_bar"
-        android:layout_alignParentLeft="true"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="My Fridge"
-            android:gravity="center_horizontal"></TextView>
+        android:layout_height="match_parent"
+        android:id="@+id/fridge_relative_layout">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"></ImageView>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/bot_nav_bar"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical"
+            android:background="@drawable/customborder">
 
-            <EditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:text="My Fridge"
+                android:textSize="30sp"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"></ImageView>-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:hint="@android:string/search_go"></EditText>-->
+<!--            </LinearLayout>-->
+            <ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginRight="-140dp"
+                android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"         android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bot_nav_bar">
+
+            <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="@android:string/search_go"></EditText>
+                android:adjustViewBounds="true"
+                android:src="@drawable/grocery_list"
+                android:backgroundTint="#FFFFFF"
+                android:scaleType="centerInside">
+
+            </ImageButton>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/fridge"
+                android:backgroundTint="#FFFFFF"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter">
+
+            </ImageButton>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/recipe_book"
+                android:backgroundTint="#FFFFFF"
+                android:scaleType="fitCenter"
+                android:padding="0dp">
+
+            </ImageButton>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/settings"
+                android:backgroundTint="#FFFFFF"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter">
+            </ImageButton>
         </LinearLayout>
-        <ExpandableListView
-            android:id="@+id/expandableListView"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_marginRight="-140dp"
-            android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"         android:divider="@android:color/darker_gray"
-            android:dividerHeight="0.5dp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/bot_nav_bar">
+    </RelativeLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="120dp"
+        android:layout_marginRight="25dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_anchor="@id/expandableListView"
+        app:layout_anchorGravity="bottom|right|end" />
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@drawable/grocery_list">
-
-        </ImageButton>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/fridge">
-
-        </ImageButton>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/recipe_book">
-
-        </ImageButton>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/settings">
-        </ImageButton>
-    </LinearLayout>
-
-
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

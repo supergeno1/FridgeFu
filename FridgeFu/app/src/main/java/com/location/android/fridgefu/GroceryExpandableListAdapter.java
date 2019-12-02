@@ -1,11 +1,15 @@
 package com.location.android.fridgefu;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -15,12 +19,13 @@ import java.util.List;
 
 public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
 
+
     private Context context;
     private List<String> expandableListTitle;
-    private HashMap<String, List<String>> expandableListDetail;
+    private HashMap<String, List<GroceryItem>> expandableListDetail;
 
     public GroceryExpandableListAdapter(Context context, List<String> expandableListTitle,
-                                       HashMap<String, List<String>> expandableListDetail) {
+                                       HashMap<String, List<GroceryItem>> expandableListDetail) {
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;
@@ -38,18 +43,51 @@ public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int listPosition, final int expandedListPosition,
+    public View getChildView(final int listPosition, final int expandedListPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        final String expandedListText = (String) getChild(listPosition, expandedListPosition);
+        final GroceryItem expandedListObject = (GroceryItem) getChild(listPosition, expandedListPosition);
+        final String expandedListText = expandedListObject.ingredient;
+
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.grocery_item, null);
         }
+        View inner = (LinearLayout) convertView.findViewById(R.id.groceryInnerLinearLayout);
+        LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) inner.getLayoutParams();
+
+        float dip = 140f;
+        if (!expandedListObject.show_settings) {
+            dip = 0f;
+        }
+
+        Resources r = parent.getResources();
+        float px = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                dip,
+                r.getDisplayMetrics()
+        );
+        p.setMargins(p.leftMargin, p.topMargin, (int)px, p.bottomMargin);
+        inner.setLayoutParams(p);
+
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
         expandedListTextView.setText(expandedListText);
-        expandedListTextView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
+
+//        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
+
+
+        Button deleteButton = convertView.findViewById(R.id.expandedListItemDelete);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expandableListDetail.get(expandableListTitle.get(listPosition))
+                        .remove(expandedListPosition);
+                notifyDataSetChanged();
+            }
+        });
+
+
         return convertView;
     }
 
@@ -85,9 +123,9 @@ public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
         }
         TextView listTitleTextView = (TextView) convertView
                 .findViewById(R.id.listTitle);
-        listTitleTextView.setTypeface(null, Typeface.BOLD);
-        listTitleTextView.setText(listTitle);
-        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
+//        listTitleTextView.setTypeface(null, Typeface.BOLD);
+        listTitleTextView.setText(listTitle.substring(0,1).toUpperCase() + listTitle.substring(1));
+//        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
         return convertView;
     }
 
@@ -98,6 +136,11 @@ public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
+        return true;
+    }
+
+    @Override
+    public boolean areAllItemsEnabled() {
         return true;
     }
 
