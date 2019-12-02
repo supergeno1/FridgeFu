@@ -4,4 +4,15 @@
     <string name="pbj_text"><font size="20">PBJ</font>\n\<font size="10">2-5 minute cook time\n\200 calories\n\1 servings</font></string>
     <string name="pbj2_text"><font size="20">PBJ2</font>\n\<font size="10">3 hour cook time\n\2000 calories\n\1 servings</font></string>
     <string name="grilled_cheese_text"><font size="20">Grilled Cheese Sandwich</font>\n\<font size="10">10-15 minute cook time\n\200 calories\n\1 servings</font></string>
+    <string name="clear_list">clear_list</string>
+    <string name="clear_fridge">clear_fridge</string>
+    <string name="add_ingredients">add_ingredients</string>
+    <string name="about">about</string>
+    <string name="help">help</string>
+    <string name="mz_cheese">mz_cheese</string>
+    <string name="search">search</string>
+    <string name="custom">custom</string>
+    <string name="check_2">check 2</string>
+    <string name="check_1">check 1</string>
+    <string name="filter">filter</string>
 </resources>

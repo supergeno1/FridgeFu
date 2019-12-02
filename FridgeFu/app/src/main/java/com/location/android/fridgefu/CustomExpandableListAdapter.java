@@ -1,14 +1,21 @@
 package com.location.android.fridgefu;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Logger;
+
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -17,10 +24,10 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> expandableListTitle;
-    private HashMap<String, List<String>> expandableListDetail;
+    private HashMap<String, List<FridgeItem>> expandableListDetail;
 
     public CustomExpandableListAdapter(Context context, List<String> expandableListTitle,
-                                       HashMap<String, List<String>> expandableListDetail) {
+                                       HashMap<String, List<FridgeItem>> expandableListDetail) {
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;
@@ -38,18 +45,57 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int listPosition, final int expandedListPosition,
+    public View getChildView(final int listPosition, final int expandedListPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        final String expandedListText = (String) getChild(listPosition, expandedListPosition);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        final FridgeItem expandedListObject = (FridgeItem) getChild(listPosition, expandedListPosition);
+        final String expandedListText = expandedListObject.ingredient;
+        final String expandedListExpiration = sdf.format(expandedListObject.expiration_date.getTime());
+
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null);
         }
+        View inner = (LinearLayout) convertView.findViewById(R.id.fridgeInnerLinearLayout);
+        LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) inner.getLayoutParams();
+
+        float dip = 140f;
+        if (!expandedListObject.show_settings) {
+            dip = 0f;
+        }
+
+        Resources r = parent.getResources();
+        float px = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                dip,
+                r.getDisplayMetrics()
+        );
+        p.setMargins(p.leftMargin, p.topMargin, (int)px, p.bottomMargin);
+        inner.setLayoutParams(p);
+
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
         expandedListTextView.setText(expandedListText);
-        expandedListTextView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
+
+        TextView expandedListDateView = (TextView) convertView
+                .findViewById(R.id.expandedListItemExpiration);
+        expandedListDateView.setText(expandedListExpiration);
+
+        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
+
+
+        Button deleteButton = convertView.findViewById(R.id.expandedListItemDelete);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expandableListDetail.get(expandableListTitle.get(listPosition))
+                        .remove(expandedListPosition);
+                notifyDataSetChanged();
+            }
+        });
+
+
         return convertView;
     }
 
@@ -100,6 +146,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
         return true;
     }
+
 
     public int getFoodGroupColor(String group) {
         int b = context.getResources().getIdentifier(group, "color", context.getPackageName());

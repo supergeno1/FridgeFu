@@ -5,24 +5,24 @@ import java.util.HashMap;
 import java.util.List;
 
 public class GroceryListDataPump {
-    public static HashMap<String, List<String>> getData() {
-        HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
+    public static HashMap<String, List<GroceryItem>> getData() {
+        HashMap<String, List<GroceryItem>> expandableListDetail = new HashMap<String, List<GroceryItem>>();
 
-        List<String> dairy = new ArrayList<String>();
-        dairy.add("Milk");
+        List<GroceryItem> dairy = new ArrayList<GroceryItem>();
+        dairy.add(new GroceryItem("Milk"));
 
-        List<String> vegetables = new ArrayList<String>();
-        vegetables.add("Potato");
-        vegetables.add("Asparagus");
-        vegetables.add("String beans");
+        List<GroceryItem> vegetables = new ArrayList<GroceryItem>();
+        vegetables.add(new GroceryItem("Potato"));
+        vegetables.add(new GroceryItem("Asparagus"));
+        vegetables.add(new GroceryItem("String beans"));
 
-        List<String> fruits = new ArrayList<String>();
-        fruits.add("Tomato");
-        fruits.add("Dragon Fruit");
+        List<GroceryItem> fruits = new ArrayList<GroceryItem>();
+        fruits.add(new GroceryItem("Tomato"));
+        fruits.add(new GroceryItem("Dragon Fruit"));
 
-        List<String> meats = new ArrayList<String>();
-        meats.add("Chicken");
-        meats.add("Bacon");
+        List<GroceryItem> meats = new ArrayList<GroceryItem>();
+        meats.add(new GroceryItem("Chicken"));
+        meats.add(new GroceryItem("Bacon"));
 
         expandableListDetail.put("dairy", dairy);
         expandableListDetail.put("vegetables", vegetables);
