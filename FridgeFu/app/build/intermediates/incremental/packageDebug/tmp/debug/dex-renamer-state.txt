@@ -1,4 +1,4 @@
-#Tue Dec 03 11:23:45 EST 2019
+#Tue Dec 03 11:28:31 EST 2019
 base.0=/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

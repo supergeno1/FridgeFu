@@ -15,16 +15,16 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Button gl = (Button) findViewById(R.id.grocery_list_button);
+        ImageButton gl = (ImageButton) findViewById(R.id.grocery_list_button);
         gl.setOnClickListener(this);
 
-        Button f = (Button) findViewById(R.id.fridge_button);
+        ImageButton f = (ImageButton) findViewById(R.id.fridge_button);
         f.setOnClickListener(this);
 
-        Button rb = (Button) findViewById(R.id.recipe_book_button);
+        ImageButton rb = (ImageButton) findViewById(R.id.recipe_book_button);
         rb.setOnClickListener(this);
 
-        Button s = (Button) findViewById(R.id.settings_button);
+        ImageButton s = (ImageButton) findViewById(R.id.settings_button);
         s.setOnClickListener(this);
     }
 
