@@ -29,6 +29,7 @@
         <activity android:name="com.location.android.fridgefu.RecipeBook" />
         <activity android:name="com.location.android.fridgefu.GroceryLanding" />
         <activity android:name="com.location.android.fridgefu.FridgeLanding" />
+        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
     </application>
 
 </manifest>

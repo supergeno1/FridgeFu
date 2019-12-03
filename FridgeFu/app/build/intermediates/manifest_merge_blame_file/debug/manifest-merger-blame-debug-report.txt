@@ -11,7 +11,7 @@
 9-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:5:5-22:19
+11-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:5:5-23:19
 12        android:allowBackup="true"
 12-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -51,6 +51,9 @@
 30        <activity android:name="com.location.android.fridgefu.FridgeLanding" />
 30-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:21:9-51
 30-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:21:19-48
-31    </application>
-32
-33</manifest>
+31        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
+31-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:22:9-53
+31-->/Users/varunsriram/cs465/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:22:19-50
+32    </application>
+33
+34</manifest>

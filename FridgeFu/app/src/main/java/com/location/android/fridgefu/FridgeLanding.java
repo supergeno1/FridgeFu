@@ -2,6 +2,7 @@ package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
@@ -82,13 +83,17 @@ public class FridgeLanding extends AppCompatActivity implements View.OnClickList
 
     public void onClick(View v) {
         if (v.getId() == R.id.grocery_list_button) {
-            setContentView(R.layout.activity_grocery_landing);
+            Intent intent = new Intent(this, GroceryLanding.class);
+            startActivity(intent);
         } else if (v.getId() == R.id.fridge_button) {
-            setContentView(R.layout.activity_fridge_landing);
+            Intent intent = new Intent(this, FridgeLanding.class);
+            startActivity(intent);
         } else if (v.getId() == R.id.recipe_book_button) {
-            setContentView(R.layout.activity_recipe_book);
+            Intent intent = new Intent(this, RecipeBook.class);
+            startActivity(intent);
         } else if (v.getId() == R.id.settings_button) {
-            setContentView(R.layout.activity_settings);
+            Intent intent = new Intent(this, SettingsLanding.class);
+            startActivity(intent);
         }
     }
 }

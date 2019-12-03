@@ -8,12 +8,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.content.Intent;
 
-public class RecipeBook extends AppCompatActivity implements View.OnClickListener {
+public class SettingsLanding extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_book);
+        setContentView(R.layout.activity_settings);
 
         Button gl = (Button) findViewById(R.id.grocery_list_button);
         gl.setOnClickListener(this);
@@ -43,5 +43,4 @@ public class RecipeBook extends AppCompatActivity implements View.OnClickListene
             startActivity(intent);
         }
     }
-
 }
