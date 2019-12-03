@@ -52,28 +52,33 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="@drawable/grocery_list">
+            android:background="@drawable/grocery_list"
+            android:id="@+id/grocery_list_button">
 
         </ImageButton>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/fridge">
+            android:background="@drawable/fridge"
+            android:id="@+id/fridge_button">
 
         </ImageButton>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/recipe_book">
+            android:background="@drawable/recipe_book"
+            android:id="@+id/recipe_book_button">
+
 
         </ImageButton>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/settings">
+            android:background="@drawable/settings"
+            android:id="@+id/settings_button">
         </ImageButton>
     </LinearLayout>
 

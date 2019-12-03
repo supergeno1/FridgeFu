@@ -12,7 +12,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GroceryLanding extends AppCompatActivity {
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.content.Intent;
+
+public class GroceryLanding extends AppCompatActivity implements View.OnClickListener {
 
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
@@ -23,6 +27,20 @@ public class GroceryLanding extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery_landing);
+
+        ImageButton gl = (ImageButton) findViewById(R.id.grocery_list_button);
+        gl.setOnClickListener(this);
+
+        ImageButton f = (ImageButton) findViewById(R.id.fridge_button);
+        f.setOnClickListener(this);
+
+        ImageButton rb = (ImageButton) findViewById(R.id.recipe_book_button);
+        rb.setOnClickListener(this);
+
+        ImageButton s = (ImageButton) findViewById(R.id.settings_button);
+        s.setOnClickListener(this);
+
+
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         expandableListDetail = GroceryListDataPump.getData();
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
@@ -64,5 +82,17 @@ public class GroceryLanding extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void onClick(View v) {
+        if (v.getId() == R.id.grocery_list_button) {
+            setContentView(R.layout.activity_grocery_landing);
+        } else if (v.getId() == R.id.fridge_button) {
+            setContentView(R.layout.activity_fridge_landing);
+        } else if (v.getId() == R.id.recipe_book_button) {
+            setContentView(R.layout.activity_recipe_book);
+        } else if (v.getId() == R.id.settings_button) {
+            setContentView(R.layout.activity_settings);
+        }
     }
 }
