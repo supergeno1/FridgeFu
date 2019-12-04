@@ -1062,8 +1062,10 @@ id actions
 id activity_chooser_view_content
 id add
 id alertTitle
+id alertbox_yes
 id all
 id always
+id amount
 id async
 id auto
 id barrier
@@ -1071,6 +1073,8 @@ id beginning
 id blocking
 id bot_nav_bar
 id bottom
+id bruh
+id bruh2
 id buttonPanel
 id center
 id center_horizontal
@@ -1119,12 +1123,15 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
+id food
 id forever
+id fridge
 id fridgeInnerLinearLayout
 id fridge_relative_layout
 id ghost_view
 id gone
 id groceryInnerLinearLayout
+id grocery_list
 id group_divider
 id groups
 id home
@@ -1135,6 +1142,8 @@ id ifRoom
 id image
 id info
 id ingredientHolder1
+id ingredientheader
+id ingredientlist
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1153,6 +1162,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
 id navigation_header_container
 id never
 id none
@@ -1171,7 +1181,9 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id recipe_book
 id recipes
+id removeIngredients
 id right
 id right_icon
 id right_side
@@ -1196,6 +1208,8 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id servings
+id setting
 id shortcut
 id showCustom
 id showHome
@@ -1214,6 +1228,8 @@ id src_in
 id src_over
 id standard
 id start
+id steosheader
+id stepslist
 id stretch
 id submenuarrow
 id submit_area
@@ -1305,6 +1321,9 @@ layout activity_main
 layout activity_recipe_book
 layout activity_recipe_filter
 layout activity_settings
+layout activity_single_recipe
+layout delete_ingredient_recipe_popup
+layout delete_ingredient_recipe_row
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1321,6 +1340,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dropdown_serving
 layout grocery_item
+layout ingredient
 layout list_group
 layout list_item
 layout mtrl_layout_snackbar
@@ -1334,6 +1354,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout step
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round

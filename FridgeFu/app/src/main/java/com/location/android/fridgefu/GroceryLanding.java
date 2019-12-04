@@ -2,6 +2,7 @@ package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -95,5 +96,25 @@ public class GroceryLanding extends AppCompatActivity {
                 return false;
             }
         });
+
+
+    }
+    public void to_fridge(View view){
+        Intent intent = new Intent(getBaseContext(), FridgeLanding.class);
+        startActivity(intent);
+    }
+
+    public void to_setting(View view){
+        Intent intent = new Intent(getBaseContext(), SettingsLanding.class);
+        startActivity(intent);
+    }
+
+    public void to_grocery_list(View view){
+        return;
+    }
+
+    public void to_recipe_book(View view){
+        Intent intent = new Intent(getBaseContext(), RecipeBook.class);
+        startActivity(intent);
     }
 }

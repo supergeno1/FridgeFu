@@ -39,6 +39,8 @@
             android:layout_alignParentBottom="true"
             android:id="@+id/recipes">
             <Button
+                android:onClick="go_single_recipe"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -48,6 +50,8 @@
 
             </Button>
             <Button
+                android:onClick="go_single_recipe"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -58,6 +62,8 @@
 
             </Button>
             <Button
+                android:onClick="go_single_recipe"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -68,6 +74,8 @@
 
             </Button>
             <Button
+                android:onClick="go_single_recipe"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -97,6 +105,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="to_grocery_list"
+
             android:background="@drawable/grocery_list"
             android:layout_weight="1">
 
@@ -104,6 +114,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="to_fridge"
+
             android:background="@drawable/fridge"
             android:layout_weight="1">
 
@@ -111,6 +123,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="to_recipe_book"
             android:background="@drawable/recipe_book"
             android:layout_weight="1">
 
@@ -118,6 +131,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="to_setting"
             android:background="@drawable/settings"
             android:layout_weight="1">
 
