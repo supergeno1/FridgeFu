@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="400dp"
+    android:layout_height="260dp">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/shop_title"
+        android:textColor="@android:color/black"
+        android:textSize="30sp">
+
+    </TextView>
+    <TextView
+        android:layout_width="74dp"
+        android:layout_height="40dp"
+        android:text="@string/name"
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@android:color/background_dark"
+        >
+
+    </TextView>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginStart="90dp"
+        >
+
+    </EditText>
+
+
+
+    <TextView
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:text="@string/add_to_default"
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:textSize="24sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@android:color/background_dark"
+        >
+
+    </TextView>
+
+    <CheckBox
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="end"
+        android:gravity="end"
+        android:layout_marginTop="-40dp"
+        android:layout_marginEnd="10dp"
+        >
+
+    </CheckBox>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/shopping_button"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+
+        >
+
+    </Button>
+</LinearLayout>
