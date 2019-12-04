@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.location.android.fridgefu;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
