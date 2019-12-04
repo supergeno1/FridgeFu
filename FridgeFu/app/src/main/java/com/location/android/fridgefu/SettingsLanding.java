@@ -1,18 +1,20 @@
-package com.example.myapplication;
+package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-public class SettingsLanding extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button list, fridge, add, help, about;
     private ImageButton groceryListMenu, fridgeMenu, recipeBookMenu;
@@ -21,7 +23,7 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_main);
 
         list = findViewById(R.id.list);
         fridge = findViewById(R.id.fridge);
@@ -92,12 +94,17 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
                 break;
             }
             case (R.id.add): {
-                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                final AlertDialog.Builder b = new AlertDialog.Builder(this);
+                final EditText input = new EditText(this);
+                input.setSingleLine();
+                FrameLayout container = new FrameLayout(this);
+                FrameLayout.LayoutParams params = new  FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                params.leftMargin = 50;
+                params.rightMargin = 50;
+                input.setLayoutParams(params);
+                container.addView(input);
                 b.setMessage("Add a new ingredient to your default grocery list.");
-                EditText input = new EditText(this);
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-                input.setLayoutParams(lp);
-                b.setView(input);
+                b.setView(container);
                 b.setPositiveButton(
                         "Add",
                         new DialogInterface.OnClickListener() {
@@ -117,7 +124,7 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
                 break;
             }
             case (R.id.help): {
-                Intent intent = new Intent(this, SettingsHelp.class);
+                Intent intent = new Intent(this, Settingshelp.class);
                 startActivity(intent);
                 break;
             }
