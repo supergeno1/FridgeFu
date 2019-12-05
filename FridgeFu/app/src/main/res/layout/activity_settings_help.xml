@@ -1,69 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Getting Started:"
-        android:id="@+id/tv1">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="60dp"
-        android:text="Looking to add some new ingredients to your fridge? Try going to the fridge menu and adding the stuff that's already in your fridge!"
-        android:id="@+id/tv2"
-        android:layout_below="@id/tv1">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="60dp"
-        android:text="Planning a shopping trip? Try going to the grocery list and creating a list there. The ingredients that you buy will be added right to your fridge!"
-        android:id="@+id/tv3"
-        android:layout_below="@id/tv2">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="60dp"
-        android:text="If you find yourself buying the same things every trip, you can add them to your grocery list by default, so you won't have to every time!"
-        android:id="@+id/tv4"
-        android:layout_below="@id/tv3">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="60dp"
-        android:text="Once your fridge is stocked up, look at the recipe book for some cool recipes that you can make with the stuff in your fridge!"
-        android:id="@+id/tv5"
-        android:layout_below="@id/tv4">
-    </TextView>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/bot_nav_bar"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        android:background="@drawable/customborder">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp" 
+            android:layout_marginRight="10dp"
+            android:text="Getting Started:"
+            android:textColor="#000000"
+            android:id="@+id/tv1">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Looking to add some new ingredients to your fridge? Try going to the fridge menu and adding the stuff that's already in your fridge!"
+            android:textColor="#000000"
+            android:id="@+id/tv2">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Planning a shopping trip? Try going to the grocery list and creating a list there. The ingredients that you buy will be added right to your fridge!"
+            android:textColor="#000000"
+            android:id="@+id/tv3">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="If you find yourself buying the same things every trip, you can add them to your grocery list by default, so you won't have to every time!"
+            android:textColor="#000000"
+            android:id="@+id/tv4">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Once your fridge is stocked up, look at the recipe book for some cool recipes that you can make with the stuff in your fridge!"
+            android:textColor="#000000"
+            android:id="@+id/tv5">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="15dp"
         android:id="@+id/bot_nav_bar">
 
         <ImageButton
@@ -71,33 +87,42 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="@drawable/grocery_list"
+            android:src="@drawable/grocery_list"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="centerInside"
             android:id="@+id/grocery_list">
-        </ImageButton>
 
+        </ImageButton>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/fridge"
+            android:src="@drawable/fridge"
+            android:backgroundTint="#FFFFFF"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:id="@+id/fridge_menu">
-        </ImageButton>
 
+        </ImageButton>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/recipe_book"
+            android:src="@drawable/recipe_book"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:padding="0dp"
             android:id="@+id/recipe_book">
-        </ImageButton>
 
+        </ImageButton>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/settings"
-            android:id="@+id/settings">
+            android:src="@drawable/settings"
+            android:backgroundTint="#FFFFFF"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter">
         </ImageButton>
-
     </LinearLayout>
 </RelativeLayout>
