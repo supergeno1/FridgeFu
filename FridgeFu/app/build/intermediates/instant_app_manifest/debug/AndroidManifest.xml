@@ -19,6 +19,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.location.android.fridgefu.SingleRecipe" />
+        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
         <activity android:name="com.location.android.fridgefu.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +31,6 @@
         <activity android:name="com.location.android.fridgefu.RecipeBook" />
         <activity android:name="com.location.android.fridgefu.GroceryLanding" />
         <activity android:name="com.location.android.fridgefu.FridgeLanding" />
-        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
         <activity android:name="com.location.android.fridgefu.RecipeLanding" />
     </application>
 

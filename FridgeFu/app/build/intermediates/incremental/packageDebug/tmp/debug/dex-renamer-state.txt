@@ -1,4 +1,4 @@
-#Mon Dec 02 15:14:19 CST 2019
-base.0=/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Wed Dec 04 04:59:13 CST 2019
+base.0=/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

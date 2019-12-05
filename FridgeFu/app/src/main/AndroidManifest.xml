@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SingleRecipe"></activity>
+        <activity android:name=".SettingsLanding" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +21,6 @@
         <activity android:name=".RecipeBook" />
         <activity android:name=".GroceryLanding" />
         <activity android:name=".FridgeLanding" />
-        <activity android:name=".SettingsLanding" />
         <activity android:name=".RecipeLanding" />
     </application>
 
