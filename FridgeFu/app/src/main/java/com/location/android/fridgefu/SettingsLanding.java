@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingsLanding extends AppCompatActivity implements View.OnClickListener {
 
     private Button list, fridge, add, help, about;
     private ImageButton groceryListMenu, fridgeMenu, recipeBookMenu;
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case (R.id.help): {
-                Intent intent = new Intent(this, Settingshelp.class);
+                Intent intent = new Intent(this, SettingsHelp.class);
                 startActivity(intent);
                 break;
             }
