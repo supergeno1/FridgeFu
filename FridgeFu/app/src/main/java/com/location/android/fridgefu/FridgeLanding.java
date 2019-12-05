@@ -2,8 +2,10 @@ package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,13 +24,30 @@ public class FridgeLanding extends AppCompatActivity {
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
     HashMap<String, List<FridgeItem>> expandableListDetail;
+    Boolean fridgeFilled = false;
+    FridgeContents fridgeContents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge_landing);
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
-        expandableListDetail = ExpandableListDataPump.getData();
+
+        fridgeContents = fridgeContents.getInstance(ExpandableListDataPump.getData());
+//        if (!fridgeFilled) {
+//            Log.e("FRIDGE", "making form dump");
+//            expandableListDetail = ExpandableListDataPump.getData();
+//        }
+//        else {
+//            fridgeContents = FridgeContents.getInstance(expandableListDetail);
+//            Log.e("FRIDGE", "from global");
+//
+//            expandableListDetail = fridgeContents.globalFridgeHash;
+//        }
+
+        expandableListDetail = fridgeContents.globalFridgeHash;
+
+
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = (ExpandableListAdapter) new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
@@ -96,5 +115,38 @@ public class FridgeLanding extends AppCompatActivity {
                 return false;
             }
         });
+
+        if (!fridgeFilled) {
+            Log.e("FRIDGE", "from global hwere");
+            fridgeContents = FridgeContents.getInstance(expandableListDetail);
+            expandableListDetail = fridgeContents.globalFridgeHash;
+            fridgeFilled = true;
+        }
+
+//        Log.e("SIZE", fridgeContents.globalFridgeHash.get(fridgeContents.globalFridgeHash.keySet().toArray()[0]).get(0).ingredient);
+
     }
+
+    public void to_fridge(View view){
+        return;
+    }
+
+    public void to_setting(View view){
+        Intent intent = new Intent(getBaseContext(), SettingsLanding.class);
+        startActivity(intent);
+    }
+
+    public void to_grocery_list(View view){
+        Intent intent = new Intent(getBaseContext(), GroceryLanding.class);
+        startActivity(intent);
+
+    }
+
+    public void to_recipe_book(View view){
+
+        Intent intent = new Intent(getBaseContext(), RecipeBook.class);
+        startActivity(intent);
+
+    }
+
 }

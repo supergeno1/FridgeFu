@@ -66,6 +66,8 @@
             android:id="@+id/bot_nav_bar">
 
             <ImageButton
+                android:id="@+id/grocery_list"
+                android:onClick="to_grocery_list"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -76,6 +78,8 @@
 
             </ImageButton>
             <ImageButton
+                android:onClick="to_fridge"
+                android:id="@+id/fridge"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -86,6 +90,8 @@
 
             </ImageButton>
             <ImageButton
+                android:onClick="to_recipe_book"
+                android:id="@+id/recipe_book"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -96,6 +102,8 @@
 
             </ImageButton>
             <ImageButton
+                android:onClick="to_setting"
+                android:id="@+id/setting"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

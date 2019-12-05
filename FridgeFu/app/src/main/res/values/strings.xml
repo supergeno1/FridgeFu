@@ -15,11 +15,4 @@
     <string name="check_2">check 2</string>
     <string name="check_1">check 1</string>
     <string name="filter">filter</string>
-    <string name="newTitle">New Ingredient</string>
-    <string name="nTButton">Add New Ingredient</string>
-    <string name="expiration_date">Custom Expiration Date:</string>
-    <string name="name">Name:</string>
-    <string name="add_to_default">Add To Default Shopping List:</string>
-    <string name="shop_title">New Shopping Item:</string>
-    <string name="shopping_button">Add New Shopping Item</string>
 </resources>
