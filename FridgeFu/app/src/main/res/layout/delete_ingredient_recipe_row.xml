@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:orientation="horizontal"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:textSize="17sp" />
+
+
+
+
+    <Button
+        android:id="@+id/alertbox_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        android:textSize="17sp"
+        android:onClick="delete"
+        android:textStyle="bold" />
+    <!--            android:background="@color/navigation_item_background"-->
+    <!--            android:text="@string/alertbox_yes"-->
+    <!--            android:textColor="@color/text_color_black"-->
+
+
+
+</LinearLayout>
