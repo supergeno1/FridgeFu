@@ -15,77 +15,72 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Recipe Book"
-            android:gravity="center_horizontal"></TextView>
+            android:text="@string/recipe_title"
+            android:textSize="30sp"
+            android:gravity="center_horizontal">
+        </TextView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"></ImageView>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/filter_icon"/>
 
             <EditText
+                android:id="@+id/edittext"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="@android:string/search_go"></EditText>
+                android:hint="@android:string/search_go">
+            </EditText>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_alignParentBottom="true"
             android:id="@+id/recipes">
             <Button
-                android:onClick="go_single_recipe"
-
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/lasagna_text"
-                android:gravity="center_horizontal">
-                <!--                android:drawableLeft="@drawable/lasagna2"-->
-
+                android:text="@string/lasagna_info"
+                android:drawableLeft="@drawable/lasagna_2"
+                android:gravity="center|start"
+                android:padding="15dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/round_box">
             </Button>
             <Button
-                android:onClick="go_single_recipe"
-
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:text="@string/pbj_text"
-                android:textSize="18sp"
-                android:gravity="center_horizontal">
-                <!--                android:drawableLeft="@drawable/pbj2"-->
-
+                android:drawableLeft="@drawable/pbj_jpeg"
+                android:gravity="center|start"
+                android:padding="15dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/round_box">
             </Button>
             <Button
-                android:onClick="go_single_recipe"
-
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/pbj2_text"
-                android:textSize="18sp"
-                android:gravity="center_horizontal">
-<!--                android:drawableLeft="@drawable/pbj2"-->
-
-            </Button>
-            <Button
-                android:onClick="go_single_recipe"
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:text="@string/grilled_cheese_text"
-                android:textSize="18sp"
-                android:gravity="center_horizontal">
-<!--                android:drawableLeft="@drawable/cheese"-->
-
+                android:drawableLeft="@drawable/grilled_cheese"
+                android:gravity="center|start"
+                android:padding="15dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/round_box">
             </Button>
         </LinearLayout>
+
         <!--
         <ExpandableListView
             android:id="@+id/expandableListView"
@@ -94,48 +89,61 @@
             android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"         android:divider="@android:color/darker_gray"
             android:dividerHeight="0.5dp" />
             -->
-    </LinearLayout>
 
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:id="@+id/bot_nav_bar">
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+
+        <ImageButton
+            android:id="@+id/grocery_list"
             android:onClick="to_grocery_list"
-
-            android:background="@drawable/grocery_list"
-            android:layout_weight="1">
-
-        </Button>
-        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:src="@drawable/grocery_list"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="centerInside">
+
+        </ImageButton>
+        <ImageButton
             android:onClick="to_fridge"
-
-            android:background="@drawable/fridge"
-            android:layout_weight="1">
-
-        </Button>
-        <Button
+            android:id="@+id/fridge"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/fridge"
+            android:backgroundTint="#FFFFFF"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter">
+
+        </ImageButton>
+        <ImageButton
             android:onClick="to_recipe_book"
-            android:background="@drawable/recipe_book"
-            android:layout_weight="1">
-
-        </Button>
-        <Button
+            android:id="@+id/recipe_book"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/recipe_book"
+            android:backgroundTint="#C0E9EA"
+            android:scaleType="fitCenter"
+            android:padding="0dp">
+        </ImageButton>
+        <ImageButton
             android:onClick="to_setting"
-            android:background="@drawable/settings"
-            android:layout_weight="1">
-
-        </Button>
+            android:id="@+id/setting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/settings"
+            android:backgroundTint="#FFFFFF"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter">
+        </ImageButton>
     </LinearLayout>
 
 
