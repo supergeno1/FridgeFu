@@ -11,7 +11,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent a = new Intent(this, GroceryLanding.class);
+
+
+        FridgeContents fridgeContents = FridgeContents.getInstance(ExpandableListDataPump.getData());
+        Intent a = new Intent(this, FridgeLanding.class);
         startActivity(a);
     }
 }
