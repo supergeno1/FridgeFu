@@ -31,6 +31,7 @@ public class FridgeItem implements Parcelable {
     public String ingredient;
     public Calendar expiration_date;
     public boolean show_settings = false;
+    public boolean is_expired = false;
 
     public FridgeItem (String ingredient, int year, int month, int day) {
         expiration_date = new GregorianCalendar();
@@ -50,6 +51,7 @@ public class FridgeItem implements Parcelable {
         ingredient = in.readString();
         expiration_date = (Calendar) in.readValue(Calendar.class.getClassLoader());
         show_settings = in.readByte() != 0x00;
+        is_expired = in.readByte() != 0x00;
     }
 
     @Override
@@ -62,6 +64,7 @@ public class FridgeItem implements Parcelable {
         dest.writeString(ingredient);
         dest.writeValue(expiration_date);
         dest.writeByte((byte) (show_settings ? 0x01 : 0x00));
+        dest.writeByte((byte) (is_expired ? 0x01 : 0x00));
     }
 
     @SuppressWarnings("unused")

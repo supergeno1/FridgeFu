@@ -6,60 +6,57 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml
+8-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml
+9-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:5:5-25:19
+11-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:5:5-24:19
 12        android:allowBackup="true"
-12-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:6:9-35
+12-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.2] /Users/renuka/.gradle/caches/transforms-2/files-2.1/d2b0bead247ceca154d7ad1db108f1f6/core-1.0.2/AndroidManifest.xml:22:18-86
+13-->[androidx.core:core:1.0.2] /home/navam/.gradle/caches/transforms-2/files-2.1/d2b0bead247ceca154d7ad1db108f1f6/core-1.0.2/AndroidManifest.xml:22:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
-15-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:7:9-43
+15-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:7:9-43
 16        android:label="@string/app_name"
-16-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:8:9-41
+16-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:8:9-41
 17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:9:9-54
+17-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:9:9-54
 18        android:supportsRtl="true"
-18-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:10:9-35
+18-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:10:9-35
 19        android:testOnly="true"
 20        android:theme="@style/AppTheme" >
-20-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:11:9-40
+20-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:11:9-40
 21        <activity android:name="com.location.android.fridgefu.SingleRecipe" />
-21-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:12:9-59
-21-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:12:19-47
+21-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:12:9-59
+21-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:12:19-47
 22        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
-22-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:13:9-53
-22-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:13:19-50
+22-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:13:9-53
+22-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:13:19-50
 23        <activity android:name="com.location.android.fridgefu.MainActivity" >
-23-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:14:9-20:20
-23-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:14:19-47
+23-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:14:9-20:20
+23-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:14:19-47
 24            <intent-filter>
-24-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:15:13-19:29
+24-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:15:13-19:29
 25                <action android:name="android.intent.action.MAIN" />
-25-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:16:17-69
-25-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:16:25-66
+25-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:16:17-69
+25-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:16:25-66
 26
 27                <category android:name="android.intent.category.LAUNCHER" />
-27-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:18:17-77
-27-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:18:27-74
+27-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:18:17-77
+27-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:18:27-74
 28            </intent-filter>
 29        </activity>
 30        <activity android:name="com.location.android.fridgefu.RecipeBook" />
-30-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:21:9-48
-30-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:21:19-45
+30-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:21:9-48
+30-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:21:19-45
 31        <activity android:name="com.location.android.fridgefu.GroceryLanding" />
-31-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:22:9-52
-31-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:22:19-49
+31-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:22:9-52
+31-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:22:19-49
 32        <activity android:name="com.location.android.fridgefu.FridgeLanding" />
-32-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:23:9-51
-32-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:23:19-48
-33        <activity android:name="com.location.android.fridgefu.RecipeLanding" />
-33-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:24:9-51
-33-->/Users/renuka/Downloads/FridgeFu-master/FridgeFu/app/src/main/AndroidManifest.xml:24:19-48
-34    </application>
-35
-36</manifest>
+32-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:23:9-51
+32-->/home/navam/college/junior_year/first_semester/cs465/fridgefu/FridgeFu/app/src/main/AndroidManifest.xml:23:19-48
+33    </application>
+34
+35</manifest>

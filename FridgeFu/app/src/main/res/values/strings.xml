@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">FridgeFu</string>
-    <string name="lasagna_text"><font size="20">Lasagna</font>\n\<font size="10">10-15 minute cook time\n\2000 calories\n\8 servings</font></string>
-    <string name="pbj_text"><font size="20">PBJ</font>\n\<font size="10">2-5 minute cook time\n\200 calories\n\1 servings</font></string>
-    <string name="pbj2_text"><font size="20">PBJ2</font>\n\<font size="10">3 hour cook time\n\2000 calories\n\1 servings</font></string>
-    <string name="grilled_cheese_text"><font size="20">Grilled Cheese Sandwich</font>\n\<font size="10">10-15 minute cook time\n\200 calories\n\1 servings</font></string>
+    <string name="lasagna_text"><font size="20sp">Lasagna</font>\n\<font size="10sp">10-15 minute cook time\n\2000 calories\n\8 servings</font></string>
+    <string name="pbj_text"><font size="20sp">PBJ</font>\n\<font size="10sp">2-5 minute cook time\n\200 calories\n\1 servings</font></string>
+    <string name="pbj2_text"><font size="20sp">PBJ2</font>\n\<font size="10sp">3 hour cook time\n\2000 calories\n\1 servings</font></string>
+    <string name="grilled_cheese_text"><font size="20sp">Grilled Cheese Sandwich</font>\n\<font size="10sp">10-15 minute cook time\n\200 calories\n\1 servings</font></string>
     <string name="clear_list">clear_list</string>
     <string name="clear_fridge">clear_fridge</string>
     <string name="add_ingredients">add_ingredients</string>
@@ -15,4 +15,11 @@
     <string name="check_2">check 2</string>
     <string name="check_1">check 1</string>
     <string name="filter">filter</string>
+    <string name="newTitle">New Ingredient</string>
+    <string name="nTButton">Add New Ingredient</string>
+    <string name="expiration_date">Custom Expiration Date:</string>
+    <string name="name">Name:</string>
+    <string name="add_to_default">Add To Default Shopping List:</string>
+    <string name="shop_title">New Shopping Item:</string>
+    <string name="shopping_button">Add New Shopping Item</string>
 </resources>

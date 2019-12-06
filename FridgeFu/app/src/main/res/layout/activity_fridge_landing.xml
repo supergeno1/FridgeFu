@@ -122,6 +122,7 @@
         android:layout_marginBottom="70dp"
         android:layout_marginRight="25dp"
         android:src="@drawable/ic_launcher_background"
+        android:id="@+id/FAB"
         app:layout_anchor="@id/expandableListView"
         app:layout_anchorGravity="bottom|right|end" />
 

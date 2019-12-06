@@ -1037,10 +1037,12 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id FAB
 id FUNCTION
 id META
 id SHIFT
 id SYM
+id about
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1061,6 +1063,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_to_default
 id alertTitle
 id alertbox_yes
 id all
@@ -1073,8 +1076,6 @@ id beginning
 id blocking
 id bot_nav_bar
 id bottom
-id bruh
-id bruh2
 id buttonPanel
 id center
 id center_horizontal
@@ -1091,6 +1092,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id csck
 id custom
 id customPanel
 id decor_content_parent
@@ -1100,6 +1102,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dfck
 id dimensions
 id direct
 id disableHome
@@ -1108,6 +1111,7 @@ id end
 id enterAlways
 id enterAlwaysCollapsed
 id exitUntilCollapsed
+id exp_date
 id expand_activities_button
 id expandableListView
 id expandedListItem
@@ -1127,6 +1131,7 @@ id food
 id forever
 id fridge
 id fridgeInnerLinearLayout
+id fridge_menu
 id fridge_relative_layout
 id ghost_view
 id gone
@@ -1134,6 +1139,7 @@ id groceryInnerLinearLayout
 id grocery_list
 id group_divider
 id groups
+id help
 id home
 id homeAsUp
 id icon
@@ -1141,6 +1147,7 @@ id icon_group
 id ifRoom
 id image
 id info
+id ing_name
 id ingredientHolder1
 id ingredientheader
 id ingredientlist
@@ -1152,6 +1159,7 @@ id largeLabel
 id left
 id line1
 id line3
+id list
 id listMode
 id listTitle
 id list_item
@@ -1183,6 +1191,7 @@ id progress_horizontal
 id radio
 id recipe_book
 id recipes
+id remove
 id removeIngredients
 id right
 id right_icon
@@ -1203,6 +1212,7 @@ id search_close_btn
 id search_edit_frame
 id search_go_btn
 id search_mag_icon
+id search_name
 id search_plate
 id search_src_text
 id search_voice_btn
@@ -1258,6 +1268,13 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv1
+id tv2
+id tv3
+id tv4
+id tv5
+id tv6
+id tv7
 id txt
 id uniform
 id unlabeled
@@ -1321,6 +1338,8 @@ layout activity_main
 layout activity_recipe_book
 layout activity_recipe_filter
 layout activity_settings
+layout activity_settings_about
+layout activity_settings_help
 layout activity_single_recipe
 layout delete_ingredient_recipe_popup
 layout delete_ingredient_recipe_row
@@ -1339,12 +1358,15 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dropdown_serving
+layout filter_row
 layout grocery_item
 layout ingredient
 layout list_group
 layout list_item
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout new_item_pop_up
+layout new_shopping_pop_up
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1399,6 +1421,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string about
 string add_ingredients
+string add_to_default
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -1409,6 +1432,7 @@ string check_2
 string clear_fridge
 string clear_list
 string custom
+string expiration_date
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string filter
@@ -1418,6 +1442,9 @@ string hide_bottom_view_on_scroll_behavior
 string lasagna_text
 string mtrl_chip_close_icon_content_description
 string mz_cheese
+string nTButton
+string name
+string newTitle
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1427,6 +1454,8 @@ string pbj2_text
 string pbj_text
 string search
 string search_menu_title
+string shop_title
+string shopping_button
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

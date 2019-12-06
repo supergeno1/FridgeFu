@@ -177,26 +177,26 @@ public class FilterRecipe extends AppCompatActivity {
     }
 
     public void remove_from_filter(View view){
-        LinearLayout vwParentRow = (LinearLayout)view.getParent();
-
-        TextView ingredient = (TextView)vwParentRow.getChildAt(0);
-        Button btnChild = (Button)vwParentRow.getChildAt(1);
-        searchedIngredients.remove(ingredient.getText());
-        ListView listView = (ListView) findViewById(R.id.filter_options);
-        FilterRecipe.SearchIngredientAdapter adapter = new FilterRecipe.SearchIngredientAdapter(this, searchedIngredients);
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+//        LinearLayout vwParentRow = (LinearLayout)view.getParent();
+//
+//        TextView ingredient = (TextView)vwParentRow.getChildAt(0);
+//        Button btnChild = (Button)vwParentRow.getChildAt(1);
+//        searchedIngredients.remove(ingredient.getText());
+//        ListView listView = (ListView) findViewById(R.id.filter_options);
+//        FilterRecipe.SearchIngredientAdapter adapter = new FilterRecipe.SearchIngredientAdapter(this, searchedIngredients);
+//        listView.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
 
 
     }
     public void search(View view){
-        EditText editText = (EditText)findViewById(R.id.search_text);
-        String search_field = String.valueOf(editText.getText());
-        searchedIngredients.add(search_field);
-        ListView listView = (ListView) findViewById(R.id.filter_options);
-        FilterRecipe.SearchIngredientAdapter adapter = new FilterRecipe.SearchIngredientAdapter(this, searchedIngredients);
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+//        EditText editText = (EditText)findViewById(R.id.search_text);
+//        String search_field = String.valueOf(editText.getText());
+//        searchedIngredients.add(search_field);
+//        ListView listView = (ListView) findViewById(R.id.filter_options);
+//        FilterRecipe.SearchIngredientAdapter adapter = new FilterRecipe.SearchIngredientAdapter(this, searchedIngredients);
+//        listView.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
 
     }
 
