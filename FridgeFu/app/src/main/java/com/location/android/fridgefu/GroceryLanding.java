@@ -148,7 +148,11 @@ public class GroceryLanding extends AppCompatActivity {
                         if (glpair.is_bought) {
                             fexpandableListDetail.get(group).add(new FridgeItem(glpair.ingredient));
 
-                            glit.remove(); // avoids a ConcurrentModificationException
+                            if (!glpair.is_pinned) {
+                                glit.remove(); // avoids a ConcurrentModificationException
+                            } else {
+                                glpair.is_bought = false;
+                            }
                         }
                     }
 
