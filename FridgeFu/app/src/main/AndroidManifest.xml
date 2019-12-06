@@ -21,6 +21,7 @@
         <activity android:name=".RecipeBook" />
         <activity android:name=".GroceryLanding" />
         <activity android:name=".FridgeLanding" />
+        <activity android:name=".FilterRecipe" />
     </application>
 
 </manifest>
