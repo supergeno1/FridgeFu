@@ -3,6 +3,7 @@ package com.location.android.fridgefu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View;
@@ -14,14 +15,22 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
 public class SettingsLanding extends AppCompatActivity implements View.OnClickListener {
 
     private Button list, fridge, help, about;
     private ImageButton groceryListMenu, fridgeMenu, recipeBookMenu;
+    GroceryContents groceryContents;
+    FridgeContents fridgeContents;
+    HashMap<String, List<FridgeItem>> fexpandableListDetail;
+    HashMap<String, List<GroceryItem>> gexpandableListDetail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
@@ -43,6 +52,11 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
         fridgeMenu.setOnClickListener(this);
         recipeBookMenu.setOnClickListener(this);
 
+        groceryContents = groceryContents.getInstance(GroceryListDataPump.getData());
+        gexpandableListDetail = groceryContents.globalGroceryHash;
+        fridgeContents = fridgeContents.getInstance(ExpandableListDataPump.getData());
+        fexpandableListDetail = fridgeContents.globalFridgeHash;
+
     }
 
     public void onClick(View view) {
@@ -56,6 +70,22 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                groceryContents = groceryContents.getInstance(GroceryListDataPump.getData());
+                                gexpandableListDetail = groceryContents.globalGroceryHash;
+                                Iterator it = gexpandableListDetail.entrySet().iterator();
+                                while (it.hasNext()) {
+                                    HashMap.Entry pair = (HashMap.Entry)it.next();
+                                    List<GroceryItem> gl = (List<GroceryItem>) pair.getValue();
+                                    Iterator glit = gl.iterator();
+                                    while (glit.hasNext()) {
+                                        GroceryItem glpair = (GroceryItem) glit.next();
+                                        if (!glpair.is_pinned) {
+                                            glit.remove(); // avoids a ConcurrentModificationException
+                                        }
+                                    }
+
+                                }
+//                                groceryContents.globalGroceryHash = gexpandableListDetail;
                                 dialog.cancel();
                             }
                         });
@@ -77,6 +107,17 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                fridgeContents = fridgeContents.getInstance(ExpandableListDataPump.getData());
+                                Log.e("F", "Entry");
+                                fexpandableListDetail = fridgeContents.globalFridgeHash;
+                                Iterator it = fexpandableListDetail.entrySet().iterator();
+                                while (it.hasNext()) {
+                                    HashMap.Entry pair = (HashMap.Entry)it.next();
+                                    List<FridgeItem> gl = (List<FridgeItem>) pair.getValue();
+                                    Log.e("F", (String)pair.getKey());
+                                    gl.clear();
+                                }
+//                                fridgeContents.globalFridgeHash = fexpandableListDetail;
                                 dialog.cancel();
                             }
                         });
