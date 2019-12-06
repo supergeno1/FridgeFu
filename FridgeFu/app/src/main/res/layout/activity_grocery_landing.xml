@@ -132,5 +132,4 @@
         app:layout_anchorGravity="bottom|right|end"
         android:id="@+id/FAB"/>
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
