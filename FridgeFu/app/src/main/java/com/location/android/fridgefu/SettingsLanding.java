@@ -21,7 +21,7 @@ import java.util.List;
 
 public class SettingsLanding extends AppCompatActivity implements View.OnClickListener {
 
-    private Button list, fridge, add, help, about;
+    private Button list, fridge, help, about;
     private ImageButton groceryListMenu, fridgeMenu, recipeBookMenu;
     GroceryContents groceryContents;
     FridgeContents fridgeContents;
@@ -36,7 +36,6 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
 
         list = findViewById(R.id.list);
         fridge = findViewById(R.id.fridge);
-        add = findViewById(R.id.add);
         help = findViewById(R.id.help);
         about = findViewById(R.id.about);
 
@@ -46,7 +45,6 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
 
         list.setOnClickListener(this);
         fridge.setOnClickListener(this);
-        add.setOnClickListener(this);
         help.setOnClickListener(this);
         about.setOnClickListener(this);
 
@@ -125,36 +123,6 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
                         });
                 b.setNegativeButton(
                         "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog a = b.create();
-                a.show();
-                break;
-            }
-            case (R.id.add): {
-                final AlertDialog.Builder b = new AlertDialog.Builder(this);
-                final EditText input = new EditText(this);
-                input.setSingleLine();
-                FrameLayout container = new FrameLayout(this);
-                FrameLayout.LayoutParams params = new  FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                params.leftMargin = 50;
-                params.rightMargin = 50;
-                input.setLayoutParams(params);
-                container.addView(input);
-                b.setMessage("Add a new ingredient to your default grocery list.");
-                b.setView(container);
-                b.setPositiveButton(
-                        "Add",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-                b.setNegativeButton(
-                        "Cancel",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
