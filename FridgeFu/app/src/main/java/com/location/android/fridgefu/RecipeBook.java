@@ -117,8 +117,8 @@ public class RecipeBook extends AppCompatActivity {
 
 
 
-//            ImageView imageView = (ImageView)  convertView.findViewById(R.id.food_pic);
-//            imageView.setImageResource(recipe_pics.get(recipe_detail.get(0)));
+            ImageView imageView = (ImageView)  convertView.findViewById(R.id.food_pic);
+            imageView.setImageResource(recipe_pics.get(recipe_detail.get(0)));
 
 
 
@@ -528,9 +528,9 @@ public class RecipeBook extends AppCompatActivity {
 
 
         //THESE KEYS MUST BE THE SAME AS THE FIRST ENTRY IN lasagna.add("Grilled Cheese");
-        recipe_pics.put("Lasagna", R.drawable.fridge);
-        recipe_pics.put("Peanut Butter Jelly Sandwich", R.drawable.grocery_list);
-        recipe_pics.put("Grilled Cheese", R.drawable.settings);
+        recipe_pics.put("Lasagna", R.drawable.lasagna);
+        recipe_pics.put("Peanut Butter Jelly Sandwich", R.drawable.pbj);
+        recipe_pics.put("Grilled Cheese", R.drawable.grilled_cheese);
 
 
     }
