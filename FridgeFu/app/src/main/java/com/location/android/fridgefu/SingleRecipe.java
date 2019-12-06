@@ -259,9 +259,10 @@ public class SingleRecipe extends AppCompatActivity {
     public void delete(View view){
         LinearLayout vwParentRow = (LinearLayout)view.getParent();
 
-        TextView ingredient = (TextView)vwParentRow.getChildAt(0);
-        Button btnChild = (Button)vwParentRow.getChildAt(1);
+        TextView ingredient = (TextView)vwParentRow.getChildAt(1);
+        Button btnChild = (Button)vwParentRow.getChildAt(0);
         btnChild.setClickable(false);
+        ingredient.setTextColor(0xAAD3D3D3);
 
         FridgeContents fridgeContents = FridgeContents.getInstance(new HashMap<String, List<FridgeItem>>());
         fridgeContents.removeIngredient(ingredient.getText().toString());
