@@ -100,7 +100,6 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:scaleType="fitCenter"
                 android:padding="0dp">
-
             </ImageButton>
             <ImageButton
                 android:onClick="to_setting"
@@ -115,5 +114,4 @@
             </ImageButton>
         </LinearLayout>
     </RelativeLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
