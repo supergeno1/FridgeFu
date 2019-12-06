@@ -263,7 +263,7 @@ public class FilterRecipe extends AppCompatActivity {
         tomato.add("Slices");
 
         ArrayList<String> cheese2 = new ArrayList<String>();
-        tomato.add("American Cheese");
+        tomato.add("Cheese");
         tomato.add("1");
         tomato.add("Slice");
 

@@ -14,6 +14,8 @@ public class ExpandableListDataPump {
         dairy.add(new FridgeItem("Ice Cream", 2019, 11, 4));
         dairy.add(new FridgeItem("Yogurt", 2019, 11, 10));
         dairy.add(new FridgeItem("Sour Cream", 2019, 11, 1));
+        dairy.add(new FridgeItem("Butter", 2019, 11, 1));
+
 
         List<FridgeItem> vegetables = new ArrayList<FridgeItem>();
         vegetables.add(new FridgeItem("Broccoli", 2019, 11, 20));
@@ -28,10 +30,20 @@ public class ExpandableListDataPump {
         fruits.add(new FridgeItem("Oranges", 2019, 11, 1));
         fruits.add(new FridgeItem("Blueberries", 2019, 11, 16));
         fruits.add(new FridgeItem("Mango", 2019, 11, 31));
+        fruits.add(new FridgeItem("Jelly", 2019, 11, 31));
+
+
+        List<FridgeItem> grains = new ArrayList<FridgeItem>();
+        grains.add(new FridgeItem("Wheat Bread", 2019, 11, 13));
+
 
         expandableListDetail.put("dairy", dairy);
         expandableListDetail.put("vegetables", vegetables);
         expandableListDetail.put("fruits", fruits);
+        expandableListDetail.put("grains", grains);
+
+
+
 
 
         return expandableListDetail;

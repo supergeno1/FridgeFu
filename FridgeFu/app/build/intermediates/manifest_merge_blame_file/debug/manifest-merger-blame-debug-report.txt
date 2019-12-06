@@ -25,46 +25,47 @@
 17-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:9:9-54
 18        android:supportsRtl="true"
 18-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:10:9-35
-19        android:theme="@style/AppTheme" >
-19-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:11:9-40
-20        <activity android:name="com.location.android.fridgefu.SingleRecipe" />
-20-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:12:9-59
-20-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:12:19-47
-21        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
-21-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:13:9-53
-21-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:13:19-50
-22        <activity android:name="com.location.android.fridgefu.SettingsAbout" />
-22-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:14:9-51
-22-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:14:19-48
-23        <activity android:name="com.location.android.fridgefu.SettingsHelp" />
-23-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:15:9-50
-23-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:15:19-47
-24        <activity android:name="com.location.android.fridgefu.MainActivity" >
-24-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:17:9-23:20
-24-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:17:19-47
-25            <intent-filter>
-25-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:18:13-22:29
-26                <action android:name="android.intent.action.MAIN" />
-26-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:19:17-69
-26-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:19:25-66
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:21:17-77
-28-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:21:27-74
-29            </intent-filter>
-30        </activity>
-31        <activity android:name="com.location.android.fridgefu.RecipeBook" />
-31-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:24:9-48
-31-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:24:19-45
-32        <activity android:name="com.location.android.fridgefu.GroceryLanding" />
-32-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:25:9-52
-32-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:25:19-49
-33        <activity android:name="com.location.android.fridgefu.FridgeLanding" />
-33-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:26:9-51
-33-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:26:19-48
-34        <activity android:name="com.location.android.fridgefu.FilterRecipe" />
-34-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:27:9-50
-34-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:27:19-47
-35    </application>
-36
-37</manifest>
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:11:9-40
+21        <activity android:name="com.location.android.fridgefu.SingleRecipe" />
+21-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:12:9-59
+21-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:12:19-47
+22        <activity android:name="com.location.android.fridgefu.SettingsLanding" />
+22-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:13:9-53
+22-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:13:19-50
+23        <activity android:name="com.location.android.fridgefu.SettingsAbout" />
+23-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:14:9-51
+23-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:14:19-48
+24        <activity android:name="com.location.android.fridgefu.SettingsHelp" />
+24-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:15:9-50
+24-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:15:19-47
+25        <activity android:name="com.location.android.fridgefu.MainActivity" >
+25-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:17:9-23:20
+25-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:17:19-47
+26            <intent-filter>
+26-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:18:13-22:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:19:17-69
+27-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:19:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:21:17-77
+29-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:21:27-74
+30            </intent-filter>
+31        </activity>
+32        <activity android:name="com.location.android.fridgefu.RecipeBook" />
+32-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:24:9-48
+32-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:24:19-45
+33        <activity android:name="com.location.android.fridgefu.GroceryLanding" />
+33-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:25:9-52
+33-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:25:19-49
+34        <activity android:name="com.location.android.fridgefu.FridgeLanding" />
+34-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:26:9-51
+34-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:26:19-48
+35        <activity android:name="com.location.android.fridgefu.FilterRecipe" />
+35-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:27:9-50
+35-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:27:19-47
+36    </application>
+37
+38</manifest>
