@@ -2,17 +2,31 @@ package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,13 +36,22 @@ public class GroceryLanding extends AppCompatActivity {
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
     HashMap<String, List<GroceryItem>> expandableListDetail;
+    Boolean groceryFilled = false;
+    GroceryContents groceryContents;
+    FloatingActionButton fab;
+    HashMap<String, String> mappedIngredientToGroup;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery_landing);
+        mappedIngredientToGroup = IngredientToGroup.getData();
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
-        expandableListDetail = GroceryListDataPump.getData();
+
+        groceryContents = groceryContents.getInstance(GroceryListDataPump.getData());
+        expandableListDetail = groceryContents.globalGroceryHash;
+
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new GroceryExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
@@ -97,6 +120,54 @@ public class GroceryLanding extends AppCompatActivity {
             }
         });
 
+        if (!groceryFilled) {
+            Log.e("Grocery", "from global where");
+            groceryContents = GroceryContents.getInstance(expandableListDetail);
+            expandableListDetail = groceryContents.globalGroceryHash;
+            groceryFilled = true;
+        }
+
+        fab = (FloatingActionButton) findViewById(R.id.FAB);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // does nothing hahhaha lolololol FUCK
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(GroceryLanding.this);
+                final View popUp = getLayoutInflater().inflate(R.layout.new_shopping_pop_up, null);
+
+                final EditText name_text = popUp.findViewById(R.id.ing_name);
+
+                alertDialog
+                        .setCancelable(false)
+                        .setPositiveButton("Add Ingredient",new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick (DialogInterface dialog,int id){
+                                Toast.makeText(GroceryLanding.this, " New ingredient added! \n ", Toast.LENGTH_LONG).show();
+                                String group = mappedIngredientToGroup.get(name_text.getText().toString().toLowerCase());
+                                GroceryItem to_add = new GroceryItem(name_text.getText().toString());
+                                CheckBox add_to_default = popUp.findViewById(R.id.add_to_default);
+                                if (add_to_default.isChecked()) {
+                                    Log.e("CHECKED", "YESS");
+                                    to_add = new GroceryItem(name_text.getText().toString(), true);
+                                }
+
+                                expandableListDetail.get(group).add(to_add);
+                            }
+                        })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick (DialogInterface dialog,int id){
+                                        dialog.cancel();
+                                    }
+                                });
+
+
+
+                alertDialog.setView(popUp);
+                AlertDialog dialog = alertDialog.create();
+                dialog.show();
+            }
+        });
 
     }
     public void to_fridge(View view){

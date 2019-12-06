@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         FridgeContents fridgeContents = FridgeContents.getInstance(ExpandableListDataPump.getData());
+        GroceryContents groceryContents = GroceryContents.getInstance(GroceryListDataPump.getData());
         Intent a = new Intent(this, FridgeLanding.class);
         startActivity(a);
     }

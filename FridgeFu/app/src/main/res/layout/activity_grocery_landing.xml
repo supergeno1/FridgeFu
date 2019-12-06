@@ -119,7 +119,8 @@
         android:layout_marginRight="25dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_anchor="@id/expandableListView"
-        app:layout_anchorGravity="bottom|right|end" />
+        app:layout_anchorGravity="bottom|right|end"
+        android:id="@+id/FAB"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

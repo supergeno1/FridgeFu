@@ -7,5 +7,11 @@ public class GroceryItem {
     public boolean is_pinned = false;
     public GroceryItem (String ingredient) {
         this.ingredient = ingredient;
+        this.is_pinned = false;
     }
+    public GroceryItem (String ingredient, boolean is_pinned) {
+        this.ingredient = ingredient;
+        this.is_pinned = true;
+    }
+
 }

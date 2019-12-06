@@ -3,12 +3,16 @@ package com.location.android.fridgefu;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -70,9 +74,16 @@ public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
         p.setMargins(p.leftMargin, p.topMargin, (int)px, p.bottomMargin);
         inner.setLayoutParams(p);
 
+
+        String[] strArray = expandedListText.split(" ");
+        StringBuilder builder = new StringBuilder();
+        for (String s : strArray) {
+            String cap = s.substring(0, 1).toUpperCase() + s.substring(1);
+            builder.append(cap + " ");
+        }
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
-        expandedListTextView.setText(expandedListText);
+        expandedListTextView.setText(builder);
 
 //        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
 
@@ -86,6 +97,24 @@ public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
                 notifyDataSetChanged();
             }
         });
+
+        CheckBox boughtItem = convertView.findViewById(R.id.expandedListItemCheckMark);
+        boughtItem.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                expandableListDetail.get(expandableListTitle.get(listPosition))
+                        .get(expandedListPosition).is_bought = isChecked;
+                notifyDataSetChanged();
+            }
+        });
+
+        ((CheckBox)convertView.findViewById(R.id.expandedListItemCheckMark)).setChecked(expandedListObject.is_bought);
+
+        TextView pinned = convertView.findViewById(R.id.expandedListItemPinned);
+//        Log.e(expandedListObject.ingredient, Boolean.toString(expandedListObject.is_pinned));
+        if (expandedListObject.is_pinned) {
+            pinned.setBackgroundResource(R.color.meats);
+        }
 
 
         return convertView;

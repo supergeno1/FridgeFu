@@ -1,7 +1,11 @@
 package com.location.android.fridgefu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.LruCacheKt;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -9,12 +13,23 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,11 +41,15 @@ public class FridgeLanding extends AppCompatActivity {
     HashMap<String, List<FridgeItem>> expandableListDetail;
     Boolean fridgeFilled = false;
     FridgeContents fridgeContents;
+    FloatingActionButton fab;
+    HashMap<String, String> mappedIngredientToGroup;
+    GroceryContents groceryContents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge_landing);
+        mappedIngredientToGroup = IngredientToGroup.getData();
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
 
         fridgeContents = fridgeContents.getInstance(ExpandableListDataPump.getData());
@@ -122,6 +141,102 @@ public class FridgeLanding extends AppCompatActivity {
             expandableListDetail = fridgeContents.globalFridgeHash;
             fridgeFilled = true;
         }
+
+        fab = (FloatingActionButton) findViewById(R.id.FAB);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // does nothing hahhaha lolololol FUCK
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(FridgeLanding.this);
+                final View popUp = getLayoutInflater().inflate(R.layout.new_item_pop_up, null);
+                CheckBox dfck = popUp.findViewById(R.id.dfck);
+                CheckBox csck = popUp.findViewById(R.id.csck);
+
+                dfck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        CheckBox csck = popUp.findViewById(R.id.csck);
+                        csck.setChecked(!isChecked);
+                    }
+                });
+
+                csck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        CheckBox dfck = popUp.findViewById(R.id.dfck);
+                        dfck.setChecked(!isChecked);
+                    }
+                });
+
+                final EditText name_text = popUp.findViewById(R.id.ing_name);
+                final TextView exp_date = popUp.findViewById(R.id.exp_date);
+
+                exp_date.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //Calendar now = Calendar.getInstance();
+                            final Calendar c = Calendar.getInstance();
+
+                            DatePickerDialog dpd = new DatePickerDialog(popUp.getContext(),
+                                    new DatePickerDialog.OnDateSetListener() {
+
+                                        @Override
+                                        public void onDateSet(DatePicker view, int year,
+                                                              int monthOfYear, int dayOfMonth) {
+                                            exp_date.setText(dayOfMonth + "-"
+                                                    + (monthOfYear + 1) + "-" + year);
+                                        }
+                                    }, c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DATE));
+                            dpd.show();
+                        }
+                    }
+                );
+
+
+                alertDialog
+                        .setCancelable(false)
+                        .setPositiveButton("Add Ingredient",new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick (DialogInterface dialog,int id){
+                                                Toast.makeText(FridgeLanding.this, " New ingredient added! \n ", Toast.LENGTH_LONG).show();
+                                                String group = mappedIngredientToGroup.get(name_text.getText().toString().toLowerCase());
+                                                String[] arrOfStr = ((String)exp_date.getText()).split("-");
+                                                for (String i : arrOfStr) {
+                                                    Log.e("EXP", i);
+                                                }
+                                                Log.e("GROUP", group);
+                                                Calendar exd = GregorianCalendar.getInstance();
+                                                exd.setTime(new Date());
+                                                exd.add(Calendar.DAY_OF_YEAR, 7);;
+                                                FridgeItem to_add = new FridgeItem(name_text.getText().toString(), exd.get(Calendar.YEAR), exd.get(Calendar.MONTH), exd.get(Calendar.DAY_OF_MONTH) );
+                                                CheckBox csck = popUp.findViewById(R.id.csck);
+                                                if (csck.isChecked()) { to_add= new FridgeItem(name_text.getText().toString(), Integer.parseInt(arrOfStr[2]), Integer.parseInt(arrOfStr[1]), Integer.parseInt(arrOfStr[0]));}
+                                                expandableListDetail.get(group).add(to_add);
+
+                                                groceryContents = groceryContents.getInstance(GroceryListDataPump.getData());
+                                                HashMap<String, List<GroceryItem>> gexpandableListDetail = groceryContents.globalGroceryHash;
+                                                CheckBox add_to_default = popUp.findViewById(R.id.add_to_default);
+                                                if (add_to_default.isChecked()) {
+                                                    GroceryItem gto_add = new GroceryItem(name_text.getText().toString(), true);
+                                                    gexpandableListDetail.get(group).add(gto_add);
+                                                }
+                                            }
+                                            })
+                        .setNegativeButton("Cancel",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick (DialogInterface dialog,int id){
+                                                dialog.cancel();
+                                            }
+                                        });
+
+
+
+                alertDialog.setView(popUp);
+                AlertDialog dialog = alertDialog.create();
+                dialog.show();
+            }
+        });
+
 
 //        Log.e("SIZE", fridgeContents.globalFridgeHash.get(fridgeContents.globalFridgeHash.keySet().toArray()[0]).get(0).ingredient);
 

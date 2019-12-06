@@ -1,6 +1,9 @@
 package com.location.android.fridgefu;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
@@ -51,12 +54,17 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         final FridgeItem expandedListObject = (FridgeItem) getChild(listPosition, expandedListPosition);
         final String expandedListText = expandedListObject.ingredient;
         final String expandedListExpiration = sdf.format(expandedListObject.expiration_date.getTime());
+        Calendar exd = GregorianCalendar.getInstance();
+        exd.setTime(new Date());
+        exd.add(Calendar.DAY_OF_YEAR, 2);
+
 
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null);
         }
+        TextView exclamation = convertView.findViewById(R.id.expandedListItemExclamationMark);
         View inner = (LinearLayout) convertView.findViewById(R.id.fridgeInnerLinearLayout);
         LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) inner.getLayoutParams();
 
@@ -74,9 +82,30 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         p.setMargins(p.leftMargin, p.topMargin, (int)px, p.bottomMargin);
         inner.setLayoutParams(p);
 
+//        Log.e("DATE 1", Long.toString(expandedListObject.expiration_date.getTimeInMillis()));
+//        Log.e("DATE 2", Long.toString(exd.getTimeInMillis()));
+//        Log.e("DATE 2", Long.toString( (expandedListObject.expiration_date.getTimeInMillis() - (exd.getTimeInMillis())) ));
+        Long exp_time = expandedListObject.expiration_date.getTimeInMillis();
+        Long from_now = exd.getTimeInMillis();
+        boolean show_expire = (exp_time - from_now) <= 0;
+        Log.e("Show" + expandedListObject.ingredient, Boolean.toString(show_expire));
+        expandableListDetail.get(expandableListTitle.get(listPosition))
+                .get(expandedListPosition).is_expired = show_expire;
+        notifyDataSetChanged();
+
+        if (expandedListObject.is_expired) {
+            exclamation.setBackgroundResource(R.color.meats);
+        }
+
+        String[] strArray = expandedListText.split(" ");
+        StringBuilder builder = new StringBuilder();
+        for (String s : strArray) {
+            String cap = s.substring(0, 1).toUpperCase() + s.substring(1);
+            builder.append(cap + " ");
+        }
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.expandedListItem);
-        expandedListTextView.setText(expandedListText);
+        expandedListTextView.setText(builder);
 
         TextView expandedListDateView = (TextView) convertView
                 .findViewById(R.id.expandedListItemExpiration);
@@ -131,8 +160,8 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         }
         TextView listTitleTextView = (TextView) convertView
                 .findViewById(R.id.listTitle);
-        listTitleTextView.setTypeface(null, Typeface.BOLD);
-        listTitleTextView.setText(listTitle);
+//        listTitleTextView.setTypeface(null, Typeface.BOLD);
+        listTitleTextView.setText(listTitle.substring(0,1).toUpperCase() + listTitle.substring(1));
 //        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
         return convertView;
     }
