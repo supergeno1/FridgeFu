@@ -1,376 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <TextView
+    <RelativeLayout
+        android:id="@+id/filter_page"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/filter"
-        android:textSize="20sp"
-        android:layout_marginLeft="15dp"
-        android:textColor="#000000"
-        android:layout_marginTop="5dp"
-        android:gravity="left"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/darker_gray"/>
-
-    <CheckBox android:id="@+id/checkbox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/check_1"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"/>
-
-    <CheckBox android:id="@+id/checkbox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/check_2"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text='@string/custom'
-            android:layout_weight="1"
-            android:id="@+id/search_text"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_vertical"
-            android:textColor="#000000"
-            android:gravity="center"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0"
-            android:text="filter"
-            android:onClick="search"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/bot_nav_bar"
+            android:orientation="vertical"
+            android:background="@drawable/customborder">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="12">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter"
+                    android:textSize="30sp"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/darker_gray"/>
 
-    </LinearLayout>
+                <CheckBox android:id="@+id/checkbox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_1"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        android:id="@+id/filter_options">
+                <CheckBox android:id="@+id/checkbox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_2"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"/>
 
-    </ListView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="filter"
+                        android:layout_weight="0"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:onClick="search" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/custom"
+                        android:layout_weight="1"
+                        android:id="@+id/search_text"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:backgroundTint="@color/colorPrimary"/>
+                </LinearLayout>
 
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:id="@+id/filter_options">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:id="@+id/bot_nav_bar">
+                </ListView>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bot_nav_bar">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="to_grocery_list"
-            android:adjustViewBounds="true"
-            android:background="@drawable/grocery_list">
+            <ImageButton
+                android:id="@+id/grocery_list"
+                android:onClick="to_grocery_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/grocery_list"
+                android:backgroundTint="#FFFFFF"
+                android:scaleType="centerInside">
 
-        </ImageButton>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="to_fridge"
-            android:background="@drawable/fridge">
+            </ImageButton>
+            <ImageButton
+                android:onClick="to_fridge"
+                android:id="@+id/fridge"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/fridge"
+                android:backgroundTint="#FFFFFF"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter">
 
-        </ImageButton>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="to_recipe_book"
-            android:background="@drawable/recipe_book">
-
-        </ImageButton>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="to_setting"
-            android:background="@drawable/settings">
-        </ImageButton>
-    </LinearLayout>
-
-
-
-</LinearLayout>
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    android:orientation="vertical">-->
-
-    <!--    <TextView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="@string/filter"-->
-    <!--        android:textSize="20sp"-->
-    <!--        android:layout_marginLeft="15dp"-->
-    <!--        android:textColor="#000000"-->
-    <!--        android:layout_marginTop="5dp"-->
-    <!--        android:gravity="left"/>-->
-
-    <!--    <View-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="1dp"-->
-    <!--        android:layout_marginTop="5dp"-->
-    <!--        android:background="@android:color/darker_gray"/>-->
-
-    <!--    <CheckBox android:id="@+id/checkbox1"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="@string/check_1"-->
-    <!--        android:paddingLeft="30dp"-->
-    <!--        android:paddingRight="30dp"-->
-    <!--        android:layout_marginLeft="30dp"-->
-    <!--        android:layout_marginTop="75dp"/>-->
-
-    <!--    <CheckBox android:id="@+id/checkbox2"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="@string/check_2"-->
-    <!--        android:paddingLeft="30dp"-->
-    <!--        android:paddingRight="30dp"-->
-    <!--        android:layout_marginLeft="30dp"-->
-    <!--        android:layout_marginTop="20dp"/>-->
-
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="68dp"-->
-    <!--        android:orientation="horizontal">-->
-
-    <!--        <EditText-->
-    <!--            android:id="@+id/search_text"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginTop="20dp"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:gravity="center"-->
-    <!--            android:text='@string/custom'-->
-    <!--            android:textColor="#000000" />-->
-
-    <!--        <Button-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:id="@+id/search_button"-->
-    <!--            android:onClick="search"-->
-    <!--            android:layout_weight="0"-->
-    <!--            android:text="search">-->
-
-    <!--        </Button>-->
-
-
-    <!--    </LinearLayout>-->
+            </ImageButton>
+            <ImageButton
+                android:onClick="to_recipe_book"
+                android:id="@+id/recipe_book"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/recipe_book"
+                android:backgroundTint="@color/colorPrimary"
+                android:scaleType="fitCenter"
+                android:padding="0dp">
+            </ImageButton>
+            <ImageButton
+                android:onClick="to_setting"
+                android:id="@+id/setting"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/settings"
+                android:backgroundTint="#FFFFFF"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter">
+            </ImageButton>
+        </LinearLayout>
+    </RelativeLayout>
 
 
 
-    <!--&lt;!&ndash;    <item&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:id="@+id/search_field"&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:title="action_search"&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:actionViewClass="android.widget.SearchView"/>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;    <SearchView&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:layout_marginTop="10dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:id="@+id/search_field"&ndash;&gt;-->
-    <!--&lt;!&ndash;        android:queryHint="@string/search"/>&ndash;&gt;-->
-
-    <!--    <ListView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="200dp"-->
-    <!--        android:id="@+id/filter_options">-->
-
-    <!--    </ListView>-->
-
-
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="100dp"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        android:id="@+id/bot_nav_bar">-->
-    <!--&lt;!&ndash;        android:layout_marginTop="160dp"&ndash;&gt;-->
-
-
-    <!--        <ImageButton-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:adjustViewBounds="true"-->
-    <!--            android:background="@drawable/grocery_list">-->
-
-    <!--        </ImageButton>-->
-    <!--        <ImageButton-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:background="@drawable/fridge">-->
-
-    <!--        </ImageButton>-->
-    <!--        <ImageButton-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:background="@drawable/recipe_book">-->
-
-    <!--        </ImageButton>-->
-    <!--        <ImageButton-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:background="@drawable/settings">-->
-    <!--        </ImageButton>-->
-    <!--    </LinearLayout>-->
-
-
-
-    <!--</LinearLayout>-->
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:orientation="vertical">-->
-
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/filter"-->
-<!--        android:textSize="20sp"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:textColor="#000000"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:gravity="left"/>-->
-
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:background="@android:color/darker_gray"/>-->
-
-<!--    <CheckBox android:id="@+id/checkbox1"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/check_1"-->
-<!--        android:paddingLeft="30dp"-->
-<!--        android:paddingRight="30dp"-->
-<!--        android:layout_marginLeft="30dp"-->
-<!--        android:layout_marginTop="75dp"/>-->
-
-<!--    <CheckBox android:id="@+id/checkbox2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/check_2"-->
-<!--        android:paddingLeft="30dp"-->
-<!--        android:paddingRight="30dp"-->
-<!--        android:layout_marginLeft="30dp"-->
-<!--        android:layout_marginTop="20dp"/>-->
-
-
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text='@string/custom'-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:textColor="#000000"-->
-<!--        android:gravity="center"/>-->
-<!--    <SearchView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:queryHint="@string/search"/>-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:padding="10dp"-->
-<!--        android:radius="10dp"-->
-<!--        android:orientation="horizontal">-->
-<!--        &lt;!&ndash;        android:background="@drawable/round_box"&ndash;&gt;-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/mz_cheese">-->
-
-<!--        </TextView>-->
-
-<!--        <Button-->
-<!--            android:layout_width="15dp"-->
-<!--            android:layout_height="15dp"-->
-<!--            android:layout_marginLeft="7dp"-->
-<!--            android:layout_marginTop="3dp">-->
-<!--&lt;!&ndash;            android:background="@drawable/x_icon"&ndash;&gt;-->
-
-
-<!--        </Button>-->
-<!--    </LinearLayout>-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginTop="160dp"-->
-<!--        android:id="@+id/bot_nav_bar">-->
-
-<!--        <ImageButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:background="@drawable/grocery_list">-->
-
-<!--        </ImageButton>-->
-<!--        <ImageButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:background="@drawable/fridge">-->
-
-<!--        </ImageButton>-->
-<!--        <ImageButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:background="@drawable/recipe_book">-->
-
-<!--        </ImageButton>-->
-<!--        <ImageButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:background="@drawable/settings">-->
-<!--        </ImageButton>-->
-<!--    </LinearLayout>-->
-
-
-
-<!--</LinearLayout>-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
