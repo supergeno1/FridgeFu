@@ -23,7 +23,7 @@ public class SettingsLanding extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_settings);
 
         list = findViewById(R.id.list);
         fridge = findViewById(R.id.fridge);
