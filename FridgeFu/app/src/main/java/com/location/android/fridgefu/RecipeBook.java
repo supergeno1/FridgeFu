@@ -30,7 +30,13 @@ public class RecipeBook extends AppCompatActivity {
     ArrayList<ArrayList<String>> all_recipes_shown_string = new ArrayList<ArrayList<String>>();
 
     ArrayList<ArrayList<String>> filter_recipes_shown = new ArrayList<ArrayList<String>>();
+    ArrayList<ArrayList<String>> filter_recipes_shown_final = new ArrayList<ArrayList<String>>();
+
     ArrayList<ArrayList<String>> filter_recipes_shown_fridge = new ArrayList<ArrayList<String>>();
+    ArrayList<ArrayList<String>> filter_recipes_shown_grocery = new ArrayList<ArrayList<String>>();
+
+    Boolean checkbox1 = false;
+    Boolean checkbox2 = false;
 
     Boolean filtered = false;
 
@@ -45,17 +51,26 @@ public class RecipeBook extends AppCompatActivity {
 
         if (intent.hasExtra("filter_ingredients")) {
             ArrayList<String>  list = (ArrayList<String>) intent.getSerializableExtra("filter_ingredients");
+            checkbox1 = (Boolean) intent.getSerializableExtra("checkbox1");
+            checkbox2 = (Boolean) intent.getSerializableExtra("checkbox2");
+            Log.e("CHECKBOX", checkbox1.toString());
             filterRecipes(list, true);
+            filterGroceryRecipes(checkbox2);
+            filterFridgeRecipes(checkbox1);
+            merge_filters();
             filtered = true;
         }
 
         else {
             ArrayList<String> lol = new ArrayList<String>();
             filterRecipes(lol, false);
+            filterGroceryRecipes(checkbox2);
+            filterFridgeRecipes(checkbox1);
+            merge_filters();
 
         }
 
-        final RecipeBook.ExpandRecipeFilterAdapter adapterFilterRecipes = new RecipeBook.ExpandRecipeFilterAdapter(this, filter_recipes_shown);
+        final RecipeBook.ExpandRecipeFilterAdapter adapterFilterRecipes = new RecipeBook.ExpandRecipeFilterAdapter(this, filter_recipes_shown_final);
 
         ListView listView = (ListView) findViewById(R.id.each_recipe);
         listView.setAdapter(adapterFilterRecipes);
@@ -141,12 +156,118 @@ public class RecipeBook extends AppCompatActivity {
     public void to_recipe_book(View view){
         return;
     }
+
     public void to_filter (View view){
         Intent intent = new Intent(getBaseContext(), FilterRecipe.class);
         startActivity(intent);
     }
 
-    public void filterFridgeRecipes(){
+    public void merge_filters(){
+        Object [] recipe_names = recipes.keySet().toArray();
+        for (int i = 0 ; i  < recipe_names.length; i++){
+            boolean matched = false;
+            String match = recipe_names[i].toString();
+
+            if (filter_recipes_shown_grocery.size() == 0 || filter_recipes_shown.size() == 0 || filter_recipes_shown_fridge.size() == 0){
+                break;
+            }
+
+            for (int j = 0; j < filter_recipes_shown_grocery.size(); j++ ){
+                if (filter_recipes_shown_grocery.get(j).get(0).equals(match)){
+                    matched = true;
+                    break;
+                }
+                matched = false;
+            }
+            Log.e("merger", new Boolean(matched).toString());
+
+            if (matched == false) {
+                Log.e("merger", new Boolean(matched).toString());
+                break;
+            }
+            for (int j = 0; j < filter_recipes_shown.size(); j++ ){
+                if (filter_recipes_shown.get(j).get(0).equals(match)){
+                    matched = true;
+                    break;
+                }
+                matched = false;
+            }
+            if (matched == false) {
+                break;
+            }
+
+            for (int j = 0; j < filter_recipes_shown_fridge.size(); j++ ){
+                if (filter_recipes_shown_fridge.get(j).get(0).equals(match)){
+                    Log.e("IDEK", match);
+
+                    matched = true;
+                    break;
+                }
+                matched = false;
+            }
+            Log.e("merger before fridge", new Boolean(matched).toString());
+
+            if (matched == false) {
+                Log.e("IDEKCHECKMATCH", new Boolean(matched).toString());
+                break;
+            }
+            else{
+                filter_recipes_shown_final.add(all_recipes_shown.get(recipe_names[i]));
+            }
+        }
+        return;
+
+    }
+
+    public void filterGroceryRecipes(Boolean filter){
+        if (!filter) {
+            Object [] recipe_names = recipes.keySet().toArray();
+            for (int i = 0 ; i  < recipe_names.length; i++){
+                filter_recipes_shown_grocery.add(all_recipes_shown.get(recipe_names[i]));
+            }
+            return;
+        }
+        HashMap<String, List<GroceryItem>> empy = new HashMap<String, List<GroceryItem>>();
+        GroceryContents groceryContents = GroceryContents.getInstance(empy);
+        List <String> groceryIngredients = groceryContents.allIngredients();
+
+        Object [] recipe_names = recipes.keySet().toArray();
+
+        for (int i = 0 ; i  < recipe_names.length; i++) {
+            ArrayList<ArrayList<String>> foods = recipes.get(recipe_names[i]).get("Ingredients");
+            boolean foundAll = false;
+            for (int j = 0; j < foods.size(); j++){
+                boolean found = false;
+                for (int k = 0; k < groceryIngredients.size(); k++){
+                    if (groceryIngredients.get(k).toLowerCase().equals(foods.get(j).get(0).toLowerCase())){
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    foundAll = false;
+                    break;
+                }else{
+                    foundAll = true;
+                }
+            }
+            if (foundAll) {
+                filter_recipes_shown_grocery.add(all_recipes_shown.get(recipe_names[i]));
+            }
+        }
+
+    }
+
+    public void filterFridgeRecipes(Boolean filter){
+        Log.e("HELO", filter.toString());
+
+        if (!filter) {
+            Object [] recipe_names = recipes.keySet().toArray();
+            for (int i = 0 ; i  < recipe_names.length; i++){
+                filter_recipes_shown_fridge.add(all_recipes_shown.get(recipe_names[i]));
+            }
+            return;
+        }
         HashMap<String, List<FridgeItem>> empy = new HashMap<String, List<FridgeItem>>();
         FridgeContents fridgeContents = FridgeContents.getInstance(empy);
         List <String> fridgeIngredients = fridgeContents.allIngredients();
@@ -174,6 +295,10 @@ public class RecipeBook extends AppCompatActivity {
             if (foundAll) {
                 filter_recipes_shown_fridge.add(all_recipes_shown.get(recipe_names[i]));
             }
+        }
+
+        for (int i = 0; i < filter_recipes_shown_fridge.size(); i++){
+            Log.e("CHECKFRIDGEFILTER", filter_recipes_shown_fridge.get(i).get(0));
         }
 
     }
@@ -348,7 +473,7 @@ public class RecipeBook extends AppCompatActivity {
         cheese2.add("Slice");
 
         ArrayList<String> butter = new ArrayList<String>();
-        butter.add("Unsalted butter");
+        butter.add("butter");
         butter.add("1");
         butter.add("Tablespoons");
 
