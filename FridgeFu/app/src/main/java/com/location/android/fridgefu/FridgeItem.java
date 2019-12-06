@@ -41,6 +41,12 @@ public class FridgeItem implements Parcelable {
         this.ingredient = ingredient;
     }
 
+    public FridgeItem (String ingredient) {
+        expiration_date = GregorianCalendar.getInstance();
+        expiration_date.add(Calendar.DAY_OF_YEAR, 7);;
+        this.ingredient = ingredient;
+    }
+
 //    @Override
 //    public String toString() {
 //        return "FridgeItem [ingredient=" + ingredient + ", expiration_date=" + expiration_date.toString() + ", show_settings=" + Boolean.toString(show_settings)

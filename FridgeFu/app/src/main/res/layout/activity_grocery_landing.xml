@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".GroceryLanding">
     <RelativeLayout
+        android:id="@+id/grocery_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -16,43 +17,52 @@
             android:layout_marginBottom="0dp"
             android:layout_height="0dp"
             android:layout_alignParentTop="true"
-            android:layout_above="@+id/bot_nav_bar"
             android:layout_alignParentLeft="true"
+            android:layout_above="@+id/bot_nav_bar"
             android:orientation="vertical"
             android:background="@drawable/customborder">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="12">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:text="Grocery List"
+                    android:textSize="30sp"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000"/>
+                <ExpandableListView
+                    android:id="@+id/expandableListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="-140dp"
+                    android:divider="@android:color/darker_gray"
+                    android:dividerHeight="0.5dp"
+                    android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:textColor="#000000"
-                android:text="Grocery List"
-                android:textSize="30sp"></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000"/>
-    <!--        <LinearLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:orientation="horizontal">-->
-    <!--            <ImageView-->
-    <!--                android:layout_width="50dp"-->
-    <!--                android:layout_height="50dp"></ImageView>-->
+            </LinearLayout>
 
-    <!--            <EditText-->
-    <!--                android:layout_width="0dp"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_weight="1"-->
-    <!--                android:hint="@android:string/search_go"></EditText>-->
-    <!--        </LinearLayout>-->
-            <ExpandableListView
-                android:id="@+id/expandableListView"
-                android:layout_marginRight="-140dp"
-                android:layout_height="match_parent"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"         android:divider="@android:color/darker_gray"
-                android:dividerHeight="0.5dp" />
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Add bought to fridge"
+                    android:id="@+id/add_all"
+                    >
+
+                </Button>
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +80,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:src="@drawable/grocery_list"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="#d81b60"
                 android:scaleType="centerInside">
 
             </ImageButton>
@@ -115,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="90dp"
         android:layout_marginRight="25dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_anchor="@id/expandableListView"

@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
@@ -28,6 +30,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class GroceryLanding extends AppCompatActivity {
@@ -38,6 +41,7 @@ public class GroceryLanding extends AppCompatActivity {
     HashMap<String, List<GroceryItem>> expandableListDetail;
     Boolean groceryFilled = false;
     GroceryContents groceryContents;
+    FridgeContents fridgeContents;
     FloatingActionButton fab;
     HashMap<String, String> mappedIngredientToGroup;
 
@@ -126,6 +130,33 @@ public class GroceryLanding extends AppCompatActivity {
             expandableListDetail = groceryContents.globalGroceryHash;
             groceryFilled = true;
         }
+
+        Button add_all_ingredients = findViewById(R.id.add_all);
+        add_all_ingredients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fridgeContents = fridgeContents.getInstance(ExpandableListDataPump.getData());
+                HashMap<String, List<FridgeItem>> fexpandableListDetail = fridgeContents.globalFridgeHash;
+                Iterator it = expandableListDetail.entrySet().iterator();
+                while (it.hasNext()) {
+                    HashMap.Entry pair = (HashMap.Entry)it.next();
+                    String group = (String) pair.getKey();
+                    List<GroceryItem> gl = (List<GroceryItem>) pair.getValue();
+                    Iterator glit = gl.iterator();
+                    while (glit.hasNext()) {
+                        GroceryItem glpair = (GroceryItem) glit.next();
+                        if (glpair.is_bought) {
+                            fexpandableListDetail.get(group).add(new FridgeItem(glpair.ingredient));
+
+                            glit.remove(); // avoids a ConcurrentModificationException
+                        }
+                    }
+
+                }
+                ViewGroup vg = findViewById(R.id.grocery_page);
+                vg.invalidate();
+            }
+        });
 
         fab = (FloatingActionButton) findViewById(R.id.FAB);
         fab.setOnClickListener(new View.OnClickListener() {

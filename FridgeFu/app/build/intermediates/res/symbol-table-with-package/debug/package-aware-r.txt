@@ -1063,6 +1063,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_all
 id add_to_default
 id alertTitle
 id alertbox_yes
@@ -1137,6 +1138,7 @@ id ghost_view
 id gone
 id groceryInnerLinearLayout
 id grocery_list
+id grocery_page
 id group_divider
 id groups
 id help
