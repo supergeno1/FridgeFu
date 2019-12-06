@@ -431,7 +431,7 @@ public class SingleRecipe extends AppCompatActivity {
         cheese2.add("Slice");
 
         ArrayList<String> butter = new ArrayList<String>();
-        butter.add("Unsalted butter");
+        butter.add("Butter");
         butter.add("1");
         butter.add("Tablespoons");
 
