@@ -30,6 +30,8 @@ public class RecipeBook extends AppCompatActivity {
     ArrayList<ArrayList<String>> all_recipes_shown_string = new ArrayList<ArrayList<String>>();
 
     ArrayList<ArrayList<String>> filter_recipes_shown = new ArrayList<ArrayList<String>>();
+    ArrayList<ArrayList<String>> filter_recipes_shown_fridge = new ArrayList<ArrayList<String>>();
+
     Boolean filtered = false;
 
 
@@ -142,6 +144,38 @@ public class RecipeBook extends AppCompatActivity {
     public void to_filter (View view){
         Intent intent = new Intent(getBaseContext(), FilterRecipe.class);
         startActivity(intent);
+    }
+
+    public void filterFridgeRecipes(){
+        HashMap<String, List<FridgeItem>> empy = new HashMap<String, List<FridgeItem>>();
+        FridgeContents fridgeContents = FridgeContents.getInstance(empy);
+        List <String> fridgeIngredients = fridgeContents.allIngredients();
+
+        Object [] recipe_names = recipes.keySet().toArray();
+
+        for (int i = 0 ; i  < recipe_names.length; i++) {
+            ArrayList<ArrayList<String>> foods = recipes.get(recipe_names[i]).get("Ingredients");
+            boolean foundAll = false;
+            for (int j = 0; j < foods.size(); j++){
+                boolean found = false;
+                for (int k = 0; k < fridgeIngredients.size(); k++){
+                    if (fridgeIngredients.get(k).toLowerCase().equals(foods.get(j).get(0).toLowerCase())){
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    foundAll = false;
+                    break;
+                }else{
+                    foundAll = true;
+                }
+            }
+            if (foundAll) {
+                filter_recipes_shown_fridge.add(all_recipes_shown.get(recipe_names[i]));
+            }
+        }
+
     }
 
     public void filterRecipes(ArrayList<String>  requiredIngredients, boolean filter){

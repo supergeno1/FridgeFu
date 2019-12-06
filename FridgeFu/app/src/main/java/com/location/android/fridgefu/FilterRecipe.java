@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -29,6 +31,9 @@ public class FilterRecipe extends AppCompatActivity {
     HashMap<String, HashMap<String, ArrayList<ArrayList<String>>>> recipes = new HashMap<String, HashMap<String, ArrayList<ArrayList<String>>>>();
     HashMap<String, ArrayList<String>> all_recipes_shown = new HashMap<String, ArrayList<String>>();
     HashMap<String, ArrayList<String>> filter_recipes_shown = new HashMap<String, ArrayList<String>>();
+    Boolean checkbox1Clicked = false;
+    Boolean checkbox2Clicked = false;
+
 
 
 
@@ -63,6 +68,22 @@ public class FilterRecipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_filter);
+
+        final CheckBox checkBox1 = findViewById(R.id.checkbox1);
+        checkBox1.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkbox1Clicked = true;
+            }
+        });
+
+        final CheckBox checkBox2 = findViewById(R.id.checkbox2);
+        checkBox2.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkbox2Clicked = true;
+            }
+        });
 
 //        HashMap<String, ArrayList<String>> recipes_2= new HashMap<String, ArrayList<String>>();
 //        ArrayList<String> las = new ArrayList<String>();
@@ -120,6 +141,8 @@ public class FilterRecipe extends AppCompatActivity {
     public void to_recipe_book(View view){
         Intent intent = new Intent(getBaseContext(), RecipeBook.class);
         intent.putExtra("filter_ingredients", (Serializable) searchedIngredients);
+        intent.putExtra("checkbox1", checkbox1Clicked);
+        intent.putExtra("checkbox2", checkbox2Clicked);
 
 //        intent.putStringArrayListExtra("filter_ingredients", (ArrayList<String>) searchedIngredients);
         startActivity(intent);
