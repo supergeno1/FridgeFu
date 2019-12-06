@@ -93,10 +93,6 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .get(expandedListPosition).is_expired = show_expire;
         notifyDataSetChanged();
 
-        if (expandedListObject.is_expired) {
-            exclamation.setBackgroundResource(R.color.meats);
-        }
-
         String[] strArray = expandedListText.split(" ");
         StringBuilder builder = new StringBuilder();
         for (String s : strArray) {
@@ -123,6 +119,10 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 notifyDataSetChanged();
             }
         });
+
+        if (expandedListObject.is_expired) {
+            exclamation.setBackgroundResource(R.color.meats);
+        }
 
 
         return convertView;
