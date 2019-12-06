@@ -633,6 +633,7 @@ color foreground_material_dark
 color foreground_material_light
 color fruits
 color fruits_child
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1010,12 +1011,14 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable fridge
+drawable grilled_cheese
 drawable grocery_list
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable lasagna
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1031,10 +1034,13 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pbj
+drawable plus
 drawable recipe_book
 drawable settings
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable trash
 id ALT
 id CTRL
 id FAB
@@ -1196,6 +1202,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recipe_book
+id recipe_book_page
 id recipe_calories
 id recipe_cooktime
 id recipe_name
