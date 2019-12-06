@@ -54,17 +54,12 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         final FridgeItem expandedListObject = (FridgeItem) getChild(listPosition, expandedListPosition);
         final String expandedListText = expandedListObject.ingredient;
         final String expandedListExpiration = sdf.format(expandedListObject.expiration_date.getTime());
-        Calendar exd = GregorianCalendar.getInstance();
-        exd.setTime(new Date());
-        exd.add(Calendar.DAY_OF_YEAR, 2);
-
 
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null);
         }
-        TextView exclamation = convertView.findViewById(R.id.expandedListItemExclamationMark);
         View inner = (LinearLayout) convertView.findViewById(R.id.fridgeInnerLinearLayout);
         LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) inner.getLayoutParams();
 
@@ -85,13 +80,6 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 //        Log.e("DATE 1", Long.toString(expandedListObject.expiration_date.getTimeInMillis()));
 //        Log.e("DATE 2", Long.toString(exd.getTimeInMillis()));
 //        Log.e("DATE 2", Long.toString( (expandedListObject.expiration_date.getTimeInMillis() - (exd.getTimeInMillis())) ));
-        Long exp_time = expandedListObject.expiration_date.getTimeInMillis();
-        Long from_now = exd.getTimeInMillis();
-        boolean show_expire = (exp_time - from_now) <= 0;
-        Log.e("Show" + expandedListObject.ingredient, Boolean.toString(show_expire));
-        expandableListDetail.get(expandableListTitle.get(listPosition))
-                .get(expandedListPosition).is_expired = show_expire;
-        notifyDataSetChanged();
 
         String[] strArray = expandedListText.split(" ");
         StringBuilder builder = new StringBuilder();
@@ -107,6 +95,13 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.expandedListItemExpiration);
         expandedListDateView.setText(expandedListExpiration);
 
+        TextView exclamation = (TextView) convertView.findViewById(R.id.expandedListItemExclamation);
+        if (expandedListObject.is_expired) {
+            exclamation.setBackgroundColor(0xff700000);
+        } else {
+            exclamation.setBackgroundColor(0x00000000);
+        }
+
 //        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
 
 
@@ -120,9 +115,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
             }
         });
 
-        if (expandedListObject.is_expired) {
-            exclamation.setBackgroundResource(R.color.meats);
-        }
+
 
 
         return convertView;

@@ -4763,7 +4763,7 @@ public final class R {
     public static final int expandedListItem=0x7f080050;
     public static final int expandedListItemCheckMark=0x7f080051;
     public static final int expandedListItemDelete=0x7f080052;
-    public static final int expandedListItemExclamationMark=0x7f080053;
+    public static final int expandedListItemExclamation=0x7f080053;
     public static final int expandedListItemExpiration=0x7f080054;
     public static final int expandedListItemPinned=0x7f080055;
     public static final int expandedListItemSettings=0x7f080056;

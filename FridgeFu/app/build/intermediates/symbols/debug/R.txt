@@ -1117,7 +1117,7 @@ int id expandableListView 0x7f08004f
 int id expandedListItem 0x7f080050
 int id expandedListItemCheckMark 0x7f080051
 int id expandedListItemDelete 0x7f080052
-int id expandedListItemExclamationMark 0x7f080053
+int id expandedListItemExclamation 0x7f080053
 int id expandedListItemExpiration 0x7f080054
 int id expandedListItemPinned 0x7f080055
 int id expandedListItemSettings 0x7f080056

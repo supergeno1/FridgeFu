@@ -31,6 +31,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class FridgeLanding extends AppCompatActivity {
@@ -65,6 +66,26 @@ public class FridgeLanding extends AppCompatActivity {
 //        }
 
         expandableListDetail = fridgeContents.globalFridgeHash;
+        Calendar exd = GregorianCalendar.getInstance();
+        exd.setTime(new Date());
+        exd.add(Calendar.DAY_OF_YEAR, 2);
+        Long from_now = exd.getTimeInMillis();
+
+        Iterator it = expandableListDetail.entrySet().iterator();
+        while (it.hasNext()) {
+            HashMap.Entry pair = (HashMap.Entry)it.next();
+            List<FridgeItem> gl = (List<FridgeItem>) pair.getValue();
+            Iterator glit = gl.iterator();
+            while (glit.hasNext()) {
+                FridgeItem glpair = (FridgeItem) glit.next();
+                Long exp_time = glpair.expiration_date.getTimeInMillis();
+                boolean show_expire = (exp_time - from_now) <= 0;
+                glpair.is_expired = show_expire;
+            }
+        }
+
+
+
 
 
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
@@ -141,6 +162,8 @@ public class FridgeLanding extends AppCompatActivity {
             expandableListDetail = fridgeContents.globalFridgeHash;
             fridgeFilled = true;
         }
+
+
 
         fab = (FloatingActionButton) findViewById(R.id.FAB);
         fab.setOnClickListener(new View.OnClickListener() {
