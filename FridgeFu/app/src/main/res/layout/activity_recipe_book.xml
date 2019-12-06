@@ -16,11 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Recipe Book"
-            android:gravity="center_horizontal"></TextView>
+            android:gravity="center_horizontal">
+
+        </TextView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <Button
+                android:layout_width="50dp"
+                android:text="@string/filter"
+                android:id="@+id/filter_button"
+                android:onClick="to_filter"
+                android:layout_height="match_parent">
+
+            </Button>
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"></ImageView>
@@ -31,61 +41,68 @@
                 android:layout_weight="1"
                 android:hint="@android:string/search_go"></EditText>
         </LinearLayout>
-
-        <LinearLayout
+        <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/recipes">
-            <Button
-                android:onClick="go_single_recipe"
+            android:layout_height="wrap_content"
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/lasagna_text"
-                android:gravity="center_horizontal">
-                <!--                android:drawableLeft="@drawable/lasagna2"-->
+            android:id="@+id/each_recipe">
 
-            </Button>
-            <Button
-                android:onClick="go_single_recipe"
+        </ListView>
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/pbj_text"
-                android:textSize="18sp"
-                android:gravity="center_horizontal">
-                <!--                android:drawableLeft="@drawable/pbj2"-->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:id="@+id/recipes">-->
+        <!--            <Button-->
+        <!--                android:onClick="go_single_recipe"-->
 
-            </Button>
-            <Button
-                android:onClick="go_single_recipe"
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="@string/lasagna_text"-->
+        <!--                android:gravity="center_horizontal">-->
+        <!--                &lt;!&ndash;                android:drawableLeft="@drawable/lasagna2"&ndash;&gt;-->
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/pbj2_text"
-                android:textSize="18sp"
-                android:gravity="center_horizontal">
-<!--                android:drawableLeft="@drawable/pbj2"-->
+        <!--            </Button>-->
+        <!--            <Button-->
+        <!--                android:onClick="go_single_recipe"-->
 
-            </Button>
-            <Button
-                android:onClick="go_single_recipe"
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="@string/pbj_text"-->
+        <!--                android:textSize="18sp"-->
+        <!--                android:gravity="center_horizontal">-->
+        <!--                &lt;!&ndash;                android:drawableLeft="@drawable/pbj2"&ndash;&gt;-->
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/grilled_cheese_text"
-                android:textSize="18sp"
-                android:gravity="center_horizontal">
-<!--                android:drawableLeft="@drawable/cheese"-->
+        <!--            </Button>-->
+        <!--            <Button-->
+        <!--                android:onClick="go_single_recipe"-->
 
-            </Button>
-        </LinearLayout>
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="@string/pbj2_text"-->
+        <!--                android:textSize="18sp"-->
+        <!--                android:gravity="center_horizontal">-->
+        <!--&lt;!&ndash;                android:drawableLeft="@drawable/pbj2"&ndash;&gt;-->
+
+        <!--            </Button>-->
+        <!--            <Button-->
+        <!--                android:onClick="go_single_recipe"-->
+
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="@string/grilled_cheese_text"-->
+        <!--                android:textSize="18sp"-->
+        <!--                android:gravity="center_horizontal">-->
+        <!--&lt;!&ndash;                android:drawableLeft="@drawable/cheese"&ndash;&gt;-->
+
+        <!--            </Button>-->
+        <!--        </LinearLayout>-->
         <!--
         <ExpandableListView
             android:id="@+id/expandableListView"
@@ -141,3 +158,147 @@
 
 
 </RelativeLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".FridgeLanding">-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_above="@+id/bot_nav_bar"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:orientation="vertical">-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Recipe Book"-->
+<!--            android:gravity="center_horizontal"></TextView>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+<!--            <ImageView-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"></ImageView>-->
+
+<!--            <EditText-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:hint="@android:string/search_go"></EditText>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:id="@+id/recipes">-->
+<!--            <Button-->
+<!--                android:onClick="go_single_recipe"-->
+
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/lasagna_text"-->
+<!--                android:gravity="center_horizontal">-->
+<!--                &lt;!&ndash;                android:drawableLeft="@drawable/lasagna2"&ndash;&gt;-->
+
+<!--            </Button>-->
+<!--            <Button-->
+<!--                android:onClick="go_single_recipe"-->
+
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/pbj_text"-->
+<!--                android:textSize="18sp"-->
+<!--                android:gravity="center_horizontal">-->
+<!--                &lt;!&ndash;                android:drawableLeft="@drawable/pbj2"&ndash;&gt;-->
+
+<!--            </Button>-->
+<!--            <Button-->
+<!--                android:onClick="go_single_recipe"-->
+
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/pbj2_text"-->
+<!--                android:textSize="18sp"-->
+<!--                android:gravity="center_horizontal">-->
+<!--&lt;!&ndash;                android:drawableLeft="@drawable/pbj2"&ndash;&gt;-->
+
+<!--            </Button>-->
+<!--            <Button-->
+<!--                android:onClick="go_single_recipe"-->
+
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/grilled_cheese_text"-->
+<!--                android:textSize="18sp"-->
+<!--                android:gravity="center_horizontal">-->
+<!--&lt;!&ndash;                android:drawableLeft="@drawable/cheese"&ndash;&gt;-->
+
+<!--            </Button>-->
+<!--        </LinearLayout>-->
+<!--        &lt;!&ndash;-->
+<!--        <ExpandableListView-->
+<!--            android:id="@+id/expandableListView"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"         android:divider="@android:color/darker_gray"-->
+<!--            android:dividerHeight="0.5dp" />-->
+<!--            &ndash;&gt;-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:id="@+id/bot_nav_bar">-->
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:onClick="to_grocery_list"-->
+
+<!--            android:background="@drawable/grocery_list"-->
+<!--            android:layout_weight="1">-->
+
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:onClick="to_fridge"-->
+
+<!--            android:background="@drawable/fridge"-->
+<!--            android:layout_weight="1">-->
+
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:onClick="to_recipe_book"-->
+<!--            android:background="@drawable/recipe_book"-->
+<!--            android:layout_weight="1">-->
+
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:onClick="to_setting"-->
+<!--            android:background="@drawable/settings"-->
+<!--            android:layout_weight="1">-->
+
+<!--        </Button>-->
+<!--    </LinearLayout>-->
+
+
+
+<!--</RelativeLayout>-->

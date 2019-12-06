@@ -38,6 +38,7 @@
                     android:layout_weight="1"
                     android:textColor="#000000"
                     android:text="Lasagna"
+                    android:id="@+id/name"
                     android:textSize="30sp"></TextView>
 
 
@@ -124,7 +125,7 @@
                 android:padding="10dp"
                 android:id="@+id/stepslist"
                 android:layout_width="fill_parent"
-                android:layout_height="150dp">
+                android:layout_height="match_parent">
 
             </ListView>
 
@@ -195,3 +196,201 @@
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".SingleRecipe">-->
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/fridge_relative_layout">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginBottom="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_above="@+id/bot_nav_bar"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@drawable/customborder">-->
+
+<!--            &lt;!&ndash;        android:layout_above="@+id/mid_section"&ndash;&gt;-->
+
+
+<!--            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="left"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:text="Lasagna"-->
+<!--                    android:textSize="30sp"></TextView>-->
+
+
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_weight="0"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:text="Completed"-->
+<!--                    android:onClick="completedPopup"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                </Button>-->
+
+
+<!--            </LinearLayout>-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="#000000"/>-->
+<!--            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/ingredientheader"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="left|center_vertical"-->
+<!--                    android:text="Ingredients"-->
+<!--                    android:layout_gravity="left"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <Spinner-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_weight="0"-->
+<!--                    android:gravity="right"-->
+<!--                    android:layout_gravity="left"-->
+<!--                    android:id="@+id/servings"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                </Spinner>-->
+
+
+<!--            </LinearLayout>-->
+
+<!--            <ListView-->
+<!--                android:padding="10dp"-->
+<!--                android:id="@+id/ingredientlist"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="150dp">-->
+
+<!--            </ListView>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="addToGrocery"-->
+<!--                android:text="Add ingredients to grocery list"-->
+<!--                android:layout_gravity="center">-->
+
+<!--            </Button>-->
+
+<!--            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/steosheader"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="left|center_vertical"-->
+<!--                    android:text="Steps"-->
+<!--                    android:layout_gravity="left"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <ListView-->
+<!--                android:padding="10dp"-->
+<!--                android:id="@+id/stepslist"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="150dp">-->
+
+<!--            </ListView>-->
+
+
+<!--        </LinearLayout>-->
+
+
+
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:id="@+id/bot_nav_bar">-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/grocery_list"-->
+<!--                android:onClick="to_grocery_list"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/grocery_list"-->
+<!--                android:backgroundTint="#FFFFFF"-->
+<!--                android:scaleType="centerInside">-->
+
+<!--            </ImageButton>-->
+<!--            <ImageButton-->
+<!--                android:onClick="to_fridge"-->
+<!--                android:id="@+id/fridge"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/fridge"-->
+<!--                android:backgroundTint="#FFFFFF"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:scaleType="fitCenter">-->
+
+<!--            </ImageButton>-->
+<!--            <ImageButton-->
+<!--                android:onClick="to_recipe_book"-->
+<!--                android:id="@+id/recipe_book"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/recipe_book"-->
+<!--                android:backgroundTint="#FFFFFF"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:padding="0dp">-->
+
+<!--            </ImageButton>-->
+<!--            <ImageButton-->
+<!--                android:onClick="to_setting"-->
+<!--                android:id="@+id/setting"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/settings"-->
+<!--                android:backgroundTint="#FFFFFF"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:scaleType="fitCenter">-->
+<!--            </ImageButton>-->
+<!--        </LinearLayout>-->
+
+<!--    </RelativeLayout>-->
+
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
