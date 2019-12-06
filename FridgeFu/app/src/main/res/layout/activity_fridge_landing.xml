@@ -115,15 +115,18 @@
         </LinearLayout>
 
     </RelativeLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="70dp"
-        android:layout_marginRight="25dp"
-        android:src="@drawable/plus"
         android:id="@+id/FAB"
-        app:layout_anchor="@id/expandableListView"
-        app:layout_anchorGravity="bottom|right|end" />
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="70dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_add_black_48dp"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_anchorGravity="bottom|right|end"
+        app:fabCustomSize="56dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
