@@ -12,9 +12,9 @@
     <string name="mz_cheese">mz_cheese</string>
     <string name="search">search</string>
     <string name="custom">custom</string>
-    <string name="check_2">check 2</string>
-    <string name="check_1">check 1</string>
-    <string name="filter">filter</string>
+    <string name="check_1">Include recipes that only have existing ingredients from your fridge.</string>
+    <string name="check_2">Include recipes that have ingredients from your fridge and grocery list.</string>
+    <string name="filter">Filter</string>
     <string name="newTitle">New Ingredient</string>
     <string name="nTButton">Add New Ingredient</string>
     <string name="expiration_date">Custom Expiration Date:</string>
