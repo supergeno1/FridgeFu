@@ -1037,10 +1037,12 @@ drawable notify_panel_notification_icon_bg
 drawable pbj
 drawable plus
 drawable recipe_book
+drawable round_box
 drawable settings
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable trash
+drawable x_icon
 id ALT
 id CTRL
 id FAB
@@ -1136,6 +1138,7 @@ id fill_vertical
 id filled
 id filter_button
 id filter_options
+id filter_page
 id fixed
 id food
 id food_pic
@@ -1207,7 +1210,6 @@ id recipe_calories
 id recipe_cooktime
 id recipe_name
 id recipe_servings
-id remove
 id removeIngredients
 id right
 id right_icon
