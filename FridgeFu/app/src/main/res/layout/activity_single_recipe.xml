@@ -90,13 +90,13 @@
                 android:padding="10dp"
                 android:id="@+id/ingredientlist"
                 android:layout_width="fill_parent"
-                android:layout_height="150dp">
+                android:layout_height="100dp">
 
             </ListView>
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:onClick="addToGrocery"
                 android:text="Add ingredients to grocery list"
                 android:layout_gravity="center">
@@ -174,7 +174,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/recipe_book"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/colorPrimary"
                 android:scaleType="fitCenter"
                 android:padding="0dp">
 

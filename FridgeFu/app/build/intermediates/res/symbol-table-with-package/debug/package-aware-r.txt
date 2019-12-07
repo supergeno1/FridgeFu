@@ -659,6 +659,7 @@ color foreground_material_dark
 color foreground_material_light
 color fruits
 color fruits_child
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1079,6 +1080,7 @@ drawable recipe_book
 drawable settings
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable trash
 id ALT
 id CTRL
 id FAB
@@ -1209,6 +1211,7 @@ id fill_vertical
 id filled
 id filter_button
 id filter_options
+id filter_page
 id fixed
 id food
 id food_pic
