@@ -48,6 +48,7 @@
                     android:layout_gravity="center_vertical"
                     android:text="Completed"
                     android:onClick="completedPopup"
+                    android:background="@color/colorPrimary"
                     android:layout_height="wrap_content">
 
                 </Button>
@@ -98,6 +99,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:onClick="addToGrocery"
+                android:background="@color/colorPrimary"
+
                 android:text="Add ingredients to grocery list"
                 android:layout_gravity="center">
 
