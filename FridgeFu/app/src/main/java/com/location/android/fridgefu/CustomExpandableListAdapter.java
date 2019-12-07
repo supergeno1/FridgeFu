@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -97,9 +98,11 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
         TextView exclamation = (TextView) convertView.findViewById(R.id.expandedListItemExclamation);
         if (expandedListObject.is_expired) {
-            exclamation.setBackgroundColor(0xff700000);
+//            exclamation.setBackgroundColor(0xff700000);
+            exclamation.setAlpha(1f);
         } else {
-            exclamation.setBackgroundColor(0x00000000);
+            exclamation.setAlpha(0f);
+//            exclamation.setBackgroundColor(0x00000000);
         }
 
 //        convertView.setBackgroundColor(getFoodGroupColor((String) getGroup(listPosition) + "_child"));
@@ -156,6 +159,23 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 //        listTitleTextView.setTypeface(null, Typeface.BOLD);
         listTitleTextView.setText(listTitle.substring(0,1).toUpperCase() + listTitle.substring(1));
 //        listTitleTextView.setBackgroundColor(getFoodGroupColor(listTitle));
+//        List<FridgeItem> fridgeItemList= this.expandableListDetail.get(this.expandableListTitle.get(listPosition));
+//
+//        List<FridgeItem> gl = (List<FridgeItem>) pair.getValue();
+//        Iterator glit = gl.iterator();
+//        while (glit.hasNext()) {
+//            GroceryItem glpair = (GroceryItem) glit.next();
+//            if (glpair.is_bought) {
+//                fexpandableListDetail.get(group).add(new FridgeItem(glpair.ingredient));
+//
+//                if (!glpair.is_pinned) {
+//                    glit.remove(); // avoids a ConcurrentModificationException
+//                } else {
+//                    glpair.is_bought = false;
+//                }
+//            }
+//        }
+
         return convertView;
     }
 

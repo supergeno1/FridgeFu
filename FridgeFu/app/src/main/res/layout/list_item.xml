@@ -19,12 +19,13 @@
         <TextView
             android:id="@+id/expandedListItemExclamation"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
             android:layout_weight="1"
             android:focusable="false"
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
             android:paddingTop="10dp"
             android:state_window_focused="false"
+            android:background="@drawable/exclamation_mark"
             android:paddingBottom="10dp" />
         <TextView
             android:id="@+id/expandedListItemExpiration"
@@ -34,17 +35,18 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:layout_weight="2"/>
-        <Button
+        <TextView
             android:id="@+id/expandedListItemSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:focusable="false"
-            android:layout_weight="1"></Button>
+            android:layout_weight="1"></TextView>
         <Button
             android:id="@+id/expandedListItemDelete"
             android:layout_width="0dp"
             android:focusable="false"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
+            android:background="@drawable/trash"
             android:layout_weight="1"></Button>
     </LinearLayout>
 </LinearLayout>

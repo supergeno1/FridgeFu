@@ -113,9 +113,9 @@ public class GroceryExpandableListAdapter extends BaseExpandableListAdapter {
         TextView pinned = convertView.findViewById(R.id.expandedListItemPinned);
 //        Log.e(expandedListObject.ingredient, Boolean.toString(expandedListObject.is_pinned));
         if (expandedListObject.is_pinned) {
-            pinned.setBackgroundColor(0xff700000);
+            pinned.setAlpha(1f);
         } else {
-            pinned.setBackgroundColor(0x00000000);
+            pinned.setAlpha(0f);
         }
 
 

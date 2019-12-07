@@ -19,7 +19,7 @@
     <string name="nTButton">Add New Ingredient</string>
     <string name="expiration_date">Custom Expiration Date:</string>
     <string name="name">Name:</string>
-    <string name="add_to_default">Add To Default Shopping List:</string>
-    <string name="shop_title">New Shopping Item:</string>
-    <string name="shopping_button">Add New Shopping Item</string>
+    <string name="add_to_default">Add To Default Grocery List:</string>
+    <string name="shop_title">New Grocery Item:</string>
+    <string name="shopping_button">Add New Grocery Item</string>
 </resources>
