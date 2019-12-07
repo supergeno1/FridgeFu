@@ -26,7 +26,8 @@
             android:paddingBottom="10dp"
             android:gravity="left|center_vertical"
             android:textSize="16sp"
-            android:layout_weight="3.25"/>
+            android:layout_weight="3.25"/>            android:scaleY=".75"
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -38,22 +39,24 @@
         <TextView
             android:id="@+id/expandedListItemPinned"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
+            android:background="@drawable/thumbtack"
             android:layout_weight="1"
             android:focusable="false"
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
             android:paddingTop="10dp"
             android:paddingBottom="10dp" />
-        <Button
+        <TextView
             android:id="@+id/expandedListItemSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:focusable="false"
-            android:layout_weight="1"></Button>
+            android:layout_weight="1"></TextView>
         <Button
             android:id="@+id/expandedListItemDelete"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
+            android:background="@drawable/trash"
             android:focusable="false"
             android:layout_weight="1"></Button>
     </LinearLayout>
