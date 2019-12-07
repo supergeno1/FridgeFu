@@ -120,7 +120,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/settings"
-            android:backgroundTint="#FFFFFF"
+            android:buttonTint="@color/colorPrimary"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter">
         </ImageButton>
