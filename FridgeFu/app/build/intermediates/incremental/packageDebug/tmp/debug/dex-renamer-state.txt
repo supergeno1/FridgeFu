@@ -1,4 +1,4 @@
-#Fri Dec 06 18:52:54 CST 2019
+#Fri Dec 06 19:01:01 CST 2019
 base.0=/Users/renuka/after_navam/FridgeFu/FridgeFu/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

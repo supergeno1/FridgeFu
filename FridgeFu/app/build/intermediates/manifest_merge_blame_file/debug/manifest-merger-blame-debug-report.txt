@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.2] /Users/renuka/.gradle/caches/transforms-2/files-2.1/d2b0bead247ceca154d7ad1db108f1f6/core-1.0.2/AndroidManifest.xml:22:18-86
+13-->[androidx.core:core:1.1.0] /Users/renuka/.gradle/caches/transforms-2/files-2.1/5b454e4f1a30a31f78d2352c725b41cb/core-1.1.0/AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
 15-->/Users/renuka/after_navam/FridgeFu/FridgeFu/app/src/main/AndroidManifest.xml:7:9-43
