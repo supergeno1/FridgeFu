@@ -66,7 +66,9 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:checked="true"></CheckBox>
+            android:checked="true"
+            android:buttonTint="@color/colorPrimary">
+        </CheckBox>
 
     </LinearLayout>
 
@@ -92,7 +94,10 @@
             android:id="@+id/csck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></CheckBox></LinearLayout>
+            android:layout_weight="1"
+            android:buttonTint="@color/colorPrimary">
+        </CheckBox>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -144,8 +149,8 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:gravity="end">
-
+            android:gravity="end"
+            android:buttonTint="@color/colorPrimary">
         </CheckBox>
     </LinearLayout>
 </LinearLayout>
