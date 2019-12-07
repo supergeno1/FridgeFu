@@ -15,7 +15,8 @@
             android:focusable="false"
             android:paddingBottom="10dp"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.75"/>
+            android:layout_weight="0.75"
+            android:buttonTint="@color/colorPrimary"/>
         <TextView
             android:id="@+id/expandedListItem"
             android:layout_width="0dp"
