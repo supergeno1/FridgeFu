@@ -75,7 +75,6 @@
                 android:src="@drawable/grocery_list"
                 android:backgroundTint="#FFFFFF"
                 android:scaleType="centerInside">
-
             </ImageButton>
             <ImageButton
                 android:onClick="to_fridge"
