@@ -80,7 +80,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:src="@drawable/grocery_list"
-                android:buttonTint="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
                 android:scaleType="centerInside">
 
             </ImageButton>
