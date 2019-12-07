@@ -42,6 +42,7 @@
                         android:layout_width="75dp"
                         android:text="@string/filter"
                         android:id="@+id/filter_button"
+                        android:background="@color/colorPrimary"
                         android:onClick="to_filter"
                         android:layout_height="match_parent">
                     </Button>
