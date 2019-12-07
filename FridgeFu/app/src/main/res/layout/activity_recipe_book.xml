@@ -39,15 +39,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <Button
-                        android:layout_width="50dp"
+                        android:layout_width="75dp"
                         android:text="@string/filter"
                         android:id="@+id/filter_button"
                         android:onClick="to_filter"
                         android:layout_height="match_parent">
                     </Button>
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"></ImageView>
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
